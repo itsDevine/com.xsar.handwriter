@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WalkThroughActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Toolbar" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewWalkthrough"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar">
+
+
+        <Button
+            android:id="@+id/walkThrough_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal |center "
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Let's get started"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:visibility="gone" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/export_layout"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+
+        <LinearLayout
+            android:id="@+id/text_button_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="38dp"
+            android:background="@drawable/main_button_bg_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_layout"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/text_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/main_button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_layout">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/folder_icon_2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:gravity="start"
+                    android:text="Text Files"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/getTextFilesBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/darkGrey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:text="Text files"
+                        android:textColor="@color/darkGrey" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/pdf_button_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="38dp"
+            android:background="@drawable/main_button_bg_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_button" />
+
+        <LinearLayout
+            android:id="@+id/pdf_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/main_button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_button">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/folder_icon_3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:gravity="start"
+                    android:layout_gravity="center"
+                    android:text="Pdf Files"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="start">
+
+                    <TextView
+                        android:id="@+id/getPdfFilesBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/darkGrey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:text="Pdf files"
+                        android:textColor="@color/darkGrey" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/scanned_button_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="38dp"
+            android:background="@drawable/main_button_bg_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pdf_button" />
+
+        <LinearLayout
+            android:id="@+id/scanned_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/main_button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pdf_button">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/folder_icon_3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:gravity="start"
+                    android:text="Scanned Files"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="start">
+
+                    <TextView
+                        android:id="@+id/getScanedFilesBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/darkGrey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:text="Scanned fies"
+                        android:textColor="@color/darkGrey" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/walkThrough"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="gone"
+        android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_layout">
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/DummyfloatingActionButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/add_white_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/DummyfloatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/DummyfloatingActionButton1"
+            app:layout_constraintEnd_toEndOf="@+id/DummyfloatingActionButton1"
+            app:srcCompat="@drawable/camera_pic"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/DummyfloatingActionButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/DummyfloatingActionButton2"
+            app:layout_constraintEnd_toEndOf="@+id/DummyfloatingActionButton2"
+            app:srcCompat="@drawable/gallery_icon1"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/DummyfloatingActionButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/DummyfloatingActionButton3"
+            app:layout_constraintEnd_toEndOf="@+id/DummyfloatingActionButton3"
+            app:srcCompat="@drawable/open_pic"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/DummyfloatingActionButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/DummyfloatingActionButton4"
+            app:layout_constraintEnd_toEndOf="@+id/DummyfloatingActionButton4"
+            app:srcCompat="@drawable/edit_pic"
+            tools:ignore="VectorDrawableCompat" />
+
+
+        <TextView
+            android:id="@+id/fab_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/fab_text_bg"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Camera"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:fontFamily="@font/raleway_semibold"
+            app:layout_constraintBottom_toBottomOf="@+id/DummyfloatingActionButton2"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton2"
+            app:layout_constraintTop_toTopOf="@+id/DummyfloatingActionButton2" />
+
+
+        <TextView
+            android:id="@+id/fab_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/fab_text_bg"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Open Gallery"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:fontFamily="@font/raleway_semibold"
+            app:layout_constraintBottom_toBottomOf="@+id/DummyfloatingActionButton3"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton3"
+            app:layout_constraintTop_toTopOf="@+id/DummyfloatingActionButton3" />
+
+        <TextView
+            android:id="@+id/fab_text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/fab_text_bg"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Open Text File"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:fontFamily="@font/raleway_semibold"
+            app:layout_constraintBottom_toBottomOf="@+id/DummyfloatingActionButton4"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton4"
+            app:layout_constraintTop_toTopOf="@+id/DummyfloatingActionButton4" />
+
+        <TextView
+            android:id="@+id/fab_text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/fab_text_bg"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Create Text File"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:fontFamily="@font/raleway_semibold"
+            app:layout_constraintBottom_toBottomOf="@+id/DummyfloatingActionButton5"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton5"
+            app:layout_constraintTop_toTopOf="@+id/DummyfloatingActionButton5" />
+
+
+
+
+
+        <ImageView
+            android:id="@+id/indicator_arrow1"
+            android:layout_width="147dp"
+            android:layout_height="183dp"
+            android:src="@drawable/black_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton1" />
+
+
+        <ImageView
+            android:id="@+id/indicator_arrow2"
+            android:layout_width="147dp"
+            android:layout_height="183dp"
+            android:src="@drawable/black_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_text2"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton2"
+            app:layout_constraintTop_toTopOf="@+id/fab_text2"
+            app:layout_constraintVertical_bias="0.8" />
+
+
+        <ImageView
+            android:id="@+id/indicator_arrow3"
+            android:layout_width="147dp"
+            android:layout_height="183dp"
+            android:src="@drawable/black_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_text3"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton3"
+            app:layout_constraintTop_toTopOf="@+id/fab_text3"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <ImageView
+            android:id="@+id/indicator_arrow4"
+            android:layout_width="147dp"
+            android:layout_height="183dp"
+            android:src="@drawable/black_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_text4"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton4"
+            app:layout_constraintTop_toTopOf="@+id/fab_text4"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <ImageView
+            android:id="@+id/indicator_arrow5"
+            android:layout_width="147dp"
+            android:layout_height="183dp"
+            android:src="@drawable/black_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_text5"
+            app:layout_constraintEnd_toStartOf="@+id/DummyfloatingActionButton5"
+            app:layout_constraintTop_toTopOf="@+id/fab_text5"
+            app:layout_constraintVertical_bias="0.8" />
+
+
+        <LinearLayout
+            android:id="@+id/clickHere1"
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:background="@drawable/instruction_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/indicator_arrow1"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TextView
+                android:id="@+id/click_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="1dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothambold"
+                android:gravity="center"
+                android:text="Click Here"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/to_Open_Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothammedium"
+                android:gravity="center"
+                android:lines="2"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/main_menu"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/textBgDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle_outline2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clickHere1"
+            app:layout_constraintEnd_toEndOf="@+id/clickHere1"
+            app:layout_constraintTop_toTopOf="@+id/clickHere1" />
+
+
+        <LinearLayout
+            android:id="@+id/clickHere2"
+            android:layout_width="250dp"
+            android:layout_height="160dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/instruction_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/indicator_arrow2"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TextView
+                android:id="@+id/click_here2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="1dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothambold"
+                android:gravity="center"
+                android:text="Click Here"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/to_Open_Menu2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothammedium"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/open_camera"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/textBgDot2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle_outline2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clickHere2"
+            app:layout_constraintEnd_toEndOf="@+id/clickHere2"
+            app:layout_constraintTop_toTopOf="@+id/clickHere2" />
+
+
+        <LinearLayout
+            android:id="@+id/clickHere3BG"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:background="@drawable/instruction_bg"
+            android:rotation="180"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"/>
+
+        <LinearLayout
+            android:id="@+id/clickHere3"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/clickHere3BG"
+            app:layout_constraintEnd_toEndOf="@id/clickHere3BG"
+            app:layout_constraintTop_toTopOf="@id/clickHere3BG">
+
+            <TextView
+                android:id="@+id/click_here3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="1dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothambold"
+                android:gravity="center"
+                android:text="Click Here"
+                android:layout_marginLeft="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/to_Open_Menu3"
+                android:layout_width="200dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothammedium"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/open_gallery"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/textBgDot3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:src="@drawable/circle_outline2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clickHere3"
+            app:layout_constraintStart_toStartOf="@+id/clickHere3"
+            app:layout_constraintTop_toTopOf="@+id/clickHere3" />
+
+
+        <LinearLayout
+            android:id="@+id/clickHere4"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/instruction_bg"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TextView
+                android:id="@+id/click_here4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="1dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothambold"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:text="Click Here"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/to_Open_Menu4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothammedium"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/open_storage"
+                android:textAllCaps="false"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/textBgDot4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle_outline2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clickHere4"
+            app:layout_constraintEnd_toEndOf="@+id/clickHere4"
+            app:layout_constraintTop_toTopOf="@+id/clickHere4" />
+
+
+        <LinearLayout
+            android:id="@+id/clickHere5BG"
+            android:layout_width="300dp"
+            android:layout_height="130dp"
+            android:background="@drawable/instruction_bg"
+            android:rotation="180"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/clickHere5"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/clickHere5BG"
+            app:layout_constraintEnd_toEndOf="@id/clickHere5BG"
+            app:layout_constraintStart_toStartOf="@id/clickHere5BG"
+            app:layout_constraintTop_toTopOf="@id/clickHere5BG">
+
+            <TextView
+                android:id="@+id/click_here5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="1dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothambold"
+                android:gravity="center"
+                android:text="Click Here"
+                android:textAllCaps="false"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/to_Open_Menu5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:fontFamily="@font/gothammedium"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/create_file"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/textBgDot5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:src="@drawable/circle_outline2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/clickHere5BG"
+            app:layout_constraintStart_toStartOf="@+id/clickHere5BG"
+            app:layout_constraintTop_toTopOf="@+id/clickHere5BG" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0980cf</color>
+    <color name="colorPrimaryDark">#064b79</color>
+    <color name="colorAccent">#0980cf</color>
+    <color name= "colorsplash">#21262c</color>
+    <color name="white">#ffffff</color>
+    <color name="lightwhite">#33FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="lightGrey">#E8E8E8</color>
+    <color name="darkGrey">#999999</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="buttonSelected">#50ffffff</color>
+    <color name="transparentblack">#80000000</color>
+    <color name="transparentblackMargin">#cc000000</color>
+    <color name="transwhite">#99ffffff</color>
+    <color name="textBG">#6544D8</color>
+    <color name="allLayoutBGColor">#B3000000</color>
+
+    <color name="gradient_start">#0980cf</color>
+    <color name="gradient_end">#ffffff</color>
+
+    <color name="tab_indicator">#c0c0c0</color>
+
+    <color name="ColourBlack">#333333</color>
+    <color name="ColourGrey">#454545</color>
+    <color name="ColourBlue">#004499</color>
+    <color name="ColourDarkBlue">#162677</color>
+    <color name="ColourRed">#cc2222</color>
+    <color name="ColourDarkRed">#990000</color>
+
+
+
+
+</resources>

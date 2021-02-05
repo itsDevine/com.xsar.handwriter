@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".text_recognizer">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/upperToolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:layout_editor_absoluteX="1dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/textSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/50"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/copyInstruction"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/upperToolbar2" />
+
+    <Button
+        android:id="@+id/nextButton2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintBottom_toBottomOf="@id/upperToolbar2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/upperToolbar2" />
+
+    <EditText
+        android:id="@+id/scannedText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/copy"
+        android:ems="10"
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:text="Name is Mohammed Afreedi"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintBottom_toTopOf="@id/lowerToolbar2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upperToolbar2" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/lowerToolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/customcamlt1"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="674dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/prevText"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/arrow3"
+        app:layout_constraintTop_toTopOf="@id/lowerToolbar2"
+        app:layout_constraintBottom_toBottomOf="@id/lowerToolbar2"
+        app:layout_constraintLeft_toLeftOf="@id/lowerToolbar2"
+        app:layout_constraintRight_toLeftOf="@id/addText"/>
+
+    <Button
+        android:id="@+id/nextText"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/arrow2"
+        app:layout_constraintTop_toTopOf="@id/lowerToolbar2"
+        app:layout_constraintBottom_toBottomOf="@id/lowerToolbar2"
+        app:layout_constraintRight_toRightOf="@id/lowerToolbar2"
+        app:layout_constraintLeft_toRightOf="@+id/addText"/>
+
+
+    <Button
+        android:id="@+id/okbutton"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/okbutton"
+        app:layout_constraintBottom_toBottomOf="@+id/lowerToolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lowerToolbar2"
+        app:layout_constraintTop_toTopOf="@+id/lowerToolbar2" />
+
+    <TextView
+        android:id="@+id/copyInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit and Copy"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintLeft_toLeftOf="@id/textSelected"
+        app:layout_constraintRight_toRightOf="@id/textSelected"
+        app:layout_constraintBottom_toBottomOf="@id/upperToolbar2"
+        app:layout_constraintTop_toBottomOf="@id/textSelected"/>
+
+    <TextView
+        android:id="@+id/downPaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/raleway_semibold"
+        android:text="Click here to Paste"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14dp"
+        app:layout_constraintLeft_toLeftOf="@id/addText"
+        app:layout_constraintRight_toRightOf="@id/addText"
+        app:layout_constraintTop_toBottomOf="@id/addText" />
+
+    <Button
+        android:id="@+id/guidance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/click_to_paste"
+        android:fontFamily="@font/raleway_semibold"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addText"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/addbutton1"
+        app:layout_constraintBottom_toBottomOf="@id/lowerToolbar2"
+        app:layout_constraintLeft_toRightOf="@id/prevText"
+        app:layout_constraintRight_toLeftOf="@id/nextText"
+        app:layout_constraintTop_toTopOf="@id/lowerToolbar2" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

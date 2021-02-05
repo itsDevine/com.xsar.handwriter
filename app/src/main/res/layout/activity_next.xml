@@ -1,0 +1,2506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/AppTheme"
+    tools:context=".activity_next"
+    tools:ignore="ExtraText">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar4"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintBottom_toTopOf="@+id/tv_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow_back_ripple"
+            android:clickable="true"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tool_bar4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tool_bar4" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/pages_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_semibold"
+        android:text="Pages : 0"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tool_bar4"
+        app:layout_constraintLeft_toLeftOf="@id/tool_bar4"
+        app:layout_constraintRight_toRightOf="@id/tool_bar4"
+        app:layout_constraintTop_toTopOf="@id/tool_bar4" />
+
+
+    <LinearLayout
+        android:id="@+id/export_btn"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/save_text_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tool_bar4"
+        app:layout_constraintEnd_toEndOf="@id/tool_bar4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="336dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:fontFamily="@font/raleway_semibold" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/walkthroughNext"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/transparent"
+        android:src="@drawable/help_outline"
+        app:layout_constraintBottom_toBottomOf="@+id/export_btn"
+        app:layout_constraintEnd_toStartOf="@+id/export_btn"
+        app:layout_constraintTop_toTopOf="@+id/export_btn" />
+
+
+    <EditText
+        android:id="@+id/edit_text_InNext"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:fontFamily="@font/times_new_roman"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:gravity="start"
+        android:padding="15dp"
+        android:textColor="@color/ColourBlack"
+        android:textColorHint="@color/darkGrey"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar4"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_InNext"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_InNext"
+        app:layout_constraintRight_toRightOf="@id/edit_text_InNext"
+        app:layout_constraintTop_toTopOf="@id/edit_text_InNext" />
+
+    <View
+        android:id="@+id/marginView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_InNext"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_InNext"
+        app:layout_constraintRight_toRightOf="@id/edit_text_InNext"
+        app:layout_constraintTop_toTopOf="@id/edit_text_InNext" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewWalkthrough"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="10dp"
+        android:elevation="5dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar4">
+
+        <Button
+            android:id="@+id/walkThrough_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal |center "
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Let's begin"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:visibility="gone" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <View
+        android:id="@+id/walkThroughInNext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccffffff"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar44"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/customcamlt1"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    <Button
+        android:id="@+id/imageButton1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/paper4_2020"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/tool_bar44"
+        app:layout_constraintRight_toLeftOf="@id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar44" />
+
+
+    <Button
+        android:id="@+id/imageButton2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/font4_2020"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageButton1"
+        app:layout_constraintRight_toLeftOf="@+id/textCaptureButton"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar44" />
+
+
+    <Button
+        android:id="@+id/textCaptureButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/customcapture5"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/tool_bar44"
+        app:layout_constraintLeft_toRightOf="@id/imageButton2"
+        app:layout_constraintRight_toLeftOf="@id/imageButton3"
+        app:layout_constraintTop_toTopOf="@id/tool_bar44" />
+
+
+    <Button
+        android:id="@+id/imageButton3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/color4_2020"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/tool_bar44"
+        app:layout_constraintLeft_toRightOf="@+id/textCaptureButton"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton4"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar44" />
+
+    <Button
+        android:id="@+id/imageButton4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/linedpapers4_2020"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imageButton3"
+        app:layout_constraintRight_toRightOf="@+id/tool_bar44"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar44" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="@+id/tool_bar44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar44">
+
+        <Button
+            android:id="@+id/imageButton1Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:foreground="?android:selectableItemBackground" />
+
+        <Button
+            android:id="@+id/imageButton2Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:foreground="?android:selectableItemBackground" />
+
+        <Button
+            android:id="@+id/textCaptureButtonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:foreground="?android:selectableItemBackground" />
+
+        <Button
+            android:id="@+id/imageButton3Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:foreground="?android:selectableItemBackground" />
+
+        <Button
+            android:id="@+id/imageButton4Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:foreground="?android:selectableItemBackground" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/indicator_arrow1"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="5dp"
+        android:rotation="90"
+        android:src="@drawable/black_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton1"
+        app:layout_constraintStart_toStartOf="@+id/imageButton1" />
+
+
+    <ImageView
+        android:id="@+id/indicator_arrow2"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="5dp"
+        android:rotation="90"
+        android:src="@drawable/black_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+    <ImageView
+        android:id="@+id/indicator_arrow3"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="5dp"
+        android:rotation="90"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textCaptureButton"
+        app:layout_constraintEnd_toEndOf="@+id/textCaptureButton"
+        app:layout_constraintStart_toStartOf="@+id/textCaptureButton" />
+
+
+    <ImageView
+        android:id="@+id/indicator_arrow4"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="5dp"
+        android:rotation="90"
+        android:scaleY="-1"
+        android:src="@drawable/black_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="@id/imageButton3" />
+
+
+    <ImageView
+        android:id="@+id/indicator_arrow5"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="5dp"
+        android:rotation="90"
+        android:scaleY="-1"
+        android:src="@drawable/black_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintEnd_toEndOf="@id/imageButton4" />
+
+
+    <ImageView
+        android:id="@+id/indicator_arrow7"
+        android:layout_width="70dp"
+        android:layout_height="140dp"
+        android:rotation="90"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_Font_Selector"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere1BG"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/instruction_bg"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/backgroundImageScroll"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/clickHere1"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/clickHere1BG"
+        app:layout_constraintLeft_toLeftOf="@id/clickHere1BG"
+        app:layout_constraintRight_toRightOf="@id/clickHere1BG"
+        app:layout_constraintTop_toTopOf="@id/clickHere1BG">
+
+        <TextView
+            android:id="@+id/click_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button1"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere1"
+        app:layout_constraintStart_toStartOf="@+id/clickHere1"
+        app:layout_constraintTop_toTopOf="@+id/clickHere1" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere2"
+        android:layout_width="320dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/instruction_bg"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+        <TextView
+            android:id="@+id/click_here2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button2"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere2"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere2"
+        app:layout_constraintTop_toTopOf="@+id/clickHere2" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere3BG"
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough" />
+
+    <LinearLayout
+        android:id="@+id/clickHere3"
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/clickHere3BG"
+        app:layout_constraintLeft_toLeftOf="@id/clickHere3BG"
+        app:layout_constraintRight_toRightOf="@id/clickHere3BG"
+        app:layout_constraintTop_toTopOf="@id/clickHere3BG">
+
+        <TextView
+            android:id="@+id/click_here3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button3"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere3"
+        app:layout_constraintStart_toStartOf="@+id/clickHere3"
+        app:layout_constraintTop_toTopOf="@+id/clickHere3" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere4"
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+        <TextView
+            android:id="@+id/click_here4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button4"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere4"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere4"
+        app:layout_constraintTop_toTopOf="@+id/clickHere4" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere5BG"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough" />
+
+    <LinearLayout
+        android:id="@+id/clickHere5"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/clickHere5BG"
+        app:layout_constraintLeft_toLeftOf="@id/clickHere5BG"
+        app:layout_constraintRight_toRightOf="@id/clickHere5BG"
+        app:layout_constraintTop_toTopOf="@id/clickHere5BG">
+
+        <TextView
+            android:id="@+id/click_here5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button5"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere5"
+        app:layout_constraintStart_toStartOf="@+id/clickHere5"
+        app:layout_constraintTop_toTopOf="@+id/clickHere5" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere8BG"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough" />
+
+    <LinearLayout
+        android:id="@+id/clickHere8"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/clickHere8BG"
+        app:layout_constraintLeft_toLeftOf="@id/clickHere8BG"
+        app:layout_constraintRight_toRightOf="@id/clickHere8BG"
+        app:layout_constraintTop_toTopOf="@id/clickHere8BG">
+
+        <TextView
+            android:id="@+id/click_here8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button6"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere8"
+        app:layout_constraintStart_toStartOf="@+id/clickHere8"
+        app:layout_constraintTop_toTopOf="@+id/clickHere8" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere7"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+        <TextView
+            android:id="@+id/click_here7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button7"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere7"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere7"
+        app:layout_constraintTop_toTopOf="@+id/clickHere7" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere9"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+        <TextView
+            android:id="@+id/click_here9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button8"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere9"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere9"
+        app:layout_constraintTop_toTopOf="@+id/clickHere9" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere10BG"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough" />
+
+    <LinearLayout
+        android:id="@+id/clickHere10"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/clickHere10BG"
+        app:layout_constraintLeft_toLeftOf="@id/clickHere10BG"
+        app:layout_constraintRight_toRightOf="@id/clickHere10BG"
+        app:layout_constraintTop_toTopOf="@id/clickHere10BG">
+
+        <TextView
+            android:id="@+id/click_here10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button9"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere10"
+        app:layout_constraintStart_toStartOf="@+id/clickHere10"
+        app:layout_constraintTop_toTopOf="@+id/clickHere10" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere11"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/instruction_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewWalkthrough">
+
+        <TextView
+            android:id="@+id/click_here11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click Here"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button10"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere11"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere11"
+        app:layout_constraintTop_toTopOf="@+id/clickHere11" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarcaptured"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#B3000000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/Pick_Image_from_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar4" />
+
+    <ImageView
+        android:id="@+id/Pick_Image_from_gallery"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="#B3000000"
+        android:padding="3dp"
+        android:paddingTop="37dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_InNext"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_InNext"
+        app:layout_constraintRight_toRightOf="@id/edit_text_InNext"
+        app:layout_constraintTop_toTopOf="@id/edit_text_InNext"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/captured_accept"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:src="@drawable/select_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/Pick_Image_from_gallery"
+        app:layout_constraintEnd_toEndOf="@+id/Pick_Image_from_gallery" />
+
+    <ImageButton
+        android:id="@+id/captured_decline"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:src="@drawable/close_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/Pick_Image_from_gallery"
+        app:layout_constraintStart_toStartOf="@+id/Pick_Image_from_gallery" />
+
+
+    <LinearLayout
+        android:id="@+id/clickHere6"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:background="@drawable/instruction_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/Pick_Image_from_gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Pick_Image_from_gallery">
+
+        <TextView
+            android:id="@+id/click_here6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothambold"
+            android:gravity="center"
+            android:text="Click on Tick"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/to_Open_Menu6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/button11"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textBgDot6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_outline2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clickHere6"
+        app:layout_constraintEnd_toEndOf="@+id/clickHere6"
+        app:layout_constraintTop_toTopOf="@+id/clickHere6" />
+
+    <ImageButton
+        android:id="@+id/backGround_Wallpaper_close_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/close_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/backgroundImageScroll"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/backgroundImageScroll"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="#B3000000"
+        android:scrollbarThumbHorizontal="@color/buttonSelected"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/addFromGallery"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/set_background_from_gallery_ripple"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/add_white_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="Add Image"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/paper_image_0"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@color/white" />
+
+            <ImageButton
+                android:id="@+id/paper_image_1"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_1" />
+
+            <ImageButton
+                android:id="@+id/paper_image_2"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_2" />
+
+            <ImageButton
+                android:id="@+id/paper_image_3"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_3" />
+
+
+            <ImageButton
+                android:id="@+id/paper_image_5"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_5" />
+
+            <ImageButton
+                android:id="@+id/paper_image_6"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_6" />
+
+            <ImageButton
+                android:id="@+id/paper_image_7"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_7" />
+
+            <ImageButton
+                android:id="@+id/paper_image_8"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_8" />
+
+            <ImageButton
+                android:id="@+id/paper_image_9"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/kb_paper_background_9" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <ImageButton
+        android:id="@+id/font_Layout_close_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/close_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_Font_Selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_Font_Selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B3000000"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center|top"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="center"
+                android:text="Font Size"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <SeekBar
+                android:id="@+id/FontSizeBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="center"
+                android:text="Letter Spacing"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+            <SeekBar
+                android:id="@+id/letterSpacingBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="center"
+                android:text="Handwriting"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/handWritingScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="5dp"
+                android:scrollbarThumbHorizontal="@color/buttonSelected">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:scrollbarThumbHorizontal="@color/buttonSelected">
+
+                    <Button
+                        android:id="@+id/handWritingFont0"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/times_new_roman"
+                        android:text="default"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont1"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_03"
+                        android:text="HandWriting 01"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_04"
+                        android:text="HandWriting 02"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont3"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_02"
+                        android:text="HandWriting 03"
+                        android:textColor="@color/white"
+                        android:textSize="24dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont4"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_01"
+                        android:text="HandWriting 04"
+                        android:textColor="@color/white"
+                        android:textSize="22dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont5"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_05"
+                        android:text="HandWriting 05"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont6"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriterfont6_yashwanth"
+                        android:text="handwriting 06"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont7"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriterfont7_ananya"
+                        android:text="Handwriting 07"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont8"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriterfont_8_afreedi"
+                        android:text="handwriting 08"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont9"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_09"
+                        android:text="Handwriting 09"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont10"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_10"
+                        android:text="Handwriting 10"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont11"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_11"
+                        android:text="Handwriting 11"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont12"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/handwriting_12"
+                        android:text="Handwriting 12"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont13"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts13"
+                        android:text="Handwriting 13"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont14"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts14"
+                        android:text="Handwriting 14"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont15"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts15"
+                        android:text="Handwriting 15"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont16"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts16"
+                        android:text="handwriting 16"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont17"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts17"
+                        android:text="handwriting 17"
+                        android:textColor="@color/white"
+                        android:textSize="19dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont18"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts18"
+                        android:text="handwriting 18"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont19"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts19"
+                        android:text="handwriting 19"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont20"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts20"
+                        android:text="handwriting 20"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont21"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts21"
+                        android:text="handwriting 21"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont22"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts22"
+                        android:text="handwriting 22"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont23"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts23"
+                        android:text="handwriting 23"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont24"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts24"
+                        android:text="handwriting 24"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont25"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts25"
+                        android:text="handwriting 25"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont26"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts26"
+                        android:text="handwriting 26"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont27"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts27"
+                        android:text="handwriting 27"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont28"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts28"
+                        android:text="handwriting 28"
+                        android:textColor="@color/white"
+                        android:textSize="22dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont29"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts29"
+                        android:text="handwriting 29"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont30"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts30"
+                        android:text="handwriting 30"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont31"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts31"
+                        android:text="HandWriting 31"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont32"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts32"
+                        android:text="HandWriting 32"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont33"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts33"
+                        android:text="HandWriting 33"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont34"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts34"
+                        android:text="HandWriting 34"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont35"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts35"
+                        android:text="HandWriting 35"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont36"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts36"
+                        android:text="HandWriting 36"
+                        android:textColor="@color/white"
+                        android:textSize="28dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont37"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts37"
+                        android:text="HandWriting 37"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont38"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts57"
+                        android:text="HandWriting 38"
+                        android:textColor="@color/white"
+                        android:textSize="28dp" />
+
+
+                    <Button
+                        android:id="@+id/handWritingFont39"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts39"
+                        android:text="HandWriting 39"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont40"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts40"
+                        android:text="HandWriting 40"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont41"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts41"
+                        android:text="HandWriting 41"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/handWritingFont42"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts42"
+                        android:text="HandWriting 42"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont43"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts43"
+                        android:text="HandWriting 43"
+                        android:textColor="@color/white"
+                        android:textSize="17dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont44"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts44"
+                        android:text="HandWriting 44"
+                        android:textColor="@color/white"
+                        android:textSize="17dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont45"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts45"
+                        android:text="HandWriting 45"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont46"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts46"
+                        android:text="HandWriting 46"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont47"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts47"
+                        android:text="HandWriting 47"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont48"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts48"
+                        android:text="HandWriting 48"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont49"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts49"
+                        android:text="HandWriting 49"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont50"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts50"
+                        android:text="HandWriting 50"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont51"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts51"
+                        android:text="HandWriting 51"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont52"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts52"
+                        android:text="HandWriting 52"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/handWritingFont53"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts53"
+                        android:text="HandWriting 53"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont54"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts54"
+                        android:text="HandWriting 54"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <Button
+                        android:id="@+id/handWritingFont55"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts55"
+                        android:text="HandWriting 55"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/handWritingFont56"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="?android:selectableItemBackground"
+                        android:fontFamily="@font/hwfonts56"
+                        android:text="HandWriting 56"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/Text_Color_Layout_close_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/close_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/text_colour_ScrollView"
+        app:layout_constraintEnd_toEndOf="@+id/text_colour_ScrollView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/text_colour_ScrollView" />
+
+    <HorizontalScrollView
+        android:id="@+id/text_colour_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#B3000000"
+        android:scrollbarThumbHorizontal="@color/buttonSelected"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/text_Colour_White"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="WHITE"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_Black"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="BLACK"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_Grey"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Grey"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_Blue"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Blue"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_DarkBlue"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Dark Blue"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_Red"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Red"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/text_Colour_DarkRed"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Dark Red"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+    <Button
+        android:id="@+id/click_here_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/raleway_semibold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Click here to select page for the background"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Pick_Image_from_gallery" />
+
+
+    <LinearLayout
+        android:id="@+id/linesLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B3000000"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/marginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="start |center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Draw top Margin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/circle_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton" />
+
+            <ImageView
+                android:id="@+id/circle_selected2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_2"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton" />
+
+            <ImageView
+                android:id="@+id/circle_unselected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/white_circle_outline"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/marginButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="start |center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Draw side Margin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/circle_selected21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton2" />
+
+            <ImageView
+                android:id="@+id/circle_selected22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_2"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton2" />
+
+            <ImageView
+                android:id="@+id/circle_unselected2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/white_circle_outline"
+                app:layout_constraintBottom_toBottomOf="@+id/marginButton2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marginButton2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/lineButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="start |center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Draw lines"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/circle_selected3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/lineButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lineButton" />
+
+            <ImageView
+                android:id="@+id/circle_selected23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/circle_2"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/lineButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lineButton" />
+
+            <ImageView
+                android:id="@+id/circle_unselected3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/white_circle_outline"
+                app:layout_constraintBottom_toBottomOf="@+id/lineButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lineButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center|top"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="center"
+                android:text="Number of Lines"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <SeekBar
+                android:id="@+id/lineDist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center|top"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Align Horizontally"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="center|top"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Align Vertically"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/linepaddingh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+            <SeekBar
+                android:id="@+id/linepaddingv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center|top"
+                android:background="@color/transparent"
+                android:fontFamily="@font/raleway_semibold"
+                android:gravity="center"
+                android:text="Text spacing"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <SeekBar
+                android:id="@+id/lineDist2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
+
+        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/indicator_arrow8"
+        android:layout_width="70dp"
+        android:layout_height="140dp"
+        android:rotation="90"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/backgroundImageScroll"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/indicator_arrow9"
+        android:layout_width="70dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="15dp"
+        android:rotation="270"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImageScroll" />
+
+    <ImageView
+        android:id="@+id/indicator_arrow10"
+        android:layout_width="70dp"
+        android:layout_height="140dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="10dp"
+        android:rotation="90"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/text_colour_ScrollView"
+        app:layout_constraintEnd_toEndOf="@+id/textCaptureButton"
+        app:layout_constraintStart_toStartOf="@id/textCaptureButton" />
+
+    <ImageView
+        android:id="@+id/indicator_arrow11"
+        android:layout_width="70dp"
+        android:layout_height="140dp"
+        android:rotation="90"
+        android:src="@drawable/click_here_arrow_down"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImageScroll" />
+
+
+    <Button
+        android:id="@+id/guidance2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/capture_images_before"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tool_bar44"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

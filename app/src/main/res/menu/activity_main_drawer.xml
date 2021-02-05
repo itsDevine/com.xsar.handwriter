@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/tutorials"
+            android:icon="@drawable/text_file"
+            android:title="Tutorial"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/video_tutorials"
+            android:icon="@drawable/video_tutorials"
+            android:title="Video Tutorial"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/rate_us"
+            android:icon="@drawable/rate_us"
+            android:title="Rate us"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/contact_us"
+            android:title="Contact us"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/feedback"
+            android:title="Suggestions and feedback"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/about_us"
+            android:title="About us"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+        <item
+            android:id="@+id/follow"
+            android:icon="@drawable/insta_logo"
+            android:title="Follow us on Instagram"
+            android:textSize="12dp"
+            android:background="@drawable/grey_ripple"
+            />
+
+    </group>
+</menu>

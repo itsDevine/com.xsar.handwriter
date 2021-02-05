@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Handwriter</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="syedtabrez">SyedTabrez</string>
+    <string name="_14">14</string>
+    <string name="_16">16</string>
+    <string name="_18">18</string>
+    <string name="_20">20</string>
+    <string name="_22">22</string>
+    <string name="_24">24</string>
+    <string name="_26">26</string>
+    <string name="_28">28</string>
+    <string name="_30">30</string>
+    <string name="_32">32</string>
+
+    <string name="mainMenu">1</string>
+
+    <string name="main_menu">to open"\n"Main Menu</string>
+    <string name="open_camera">to Capture"\n"Images from"\n"Camera</string>
+    <string name="open_gallery">to Import"\n"Images from"\n"Gallery</string>
+    <string name="open_storage">to Open Text"\n"Files from"\n"Storage</string>
+    <string name="create_file">to Create"\n"Text File</string>
+
+    <string name="button1">to select Page for"\n"the background</string>
+    <string name="button2">to edit Text,"\n"Text-Size and"\n"Choose Handwriting</string>
+    <string name="button3">to select"\n"Text color</string>
+    <string name="button4">to select"\n"lined Page</string>
+    <string name="button5">to Capture Images"\n"to Export</string>
+    <string name="button6">to change number"\n"of lines</string>
+    <string name="button7">to include/exclude"\n"Margin</string>
+    <string name="button8">to place text"\n"to right of the"\n"Margin</string>
+    <string name="button9">to place first line"\n"of text on the"\n"first line of paper</string>
+    <string name="button10">to align remaining"\n"text with the lines</string>
+    <string name="button11">to Save the Image"\n"or Cross to discard it</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+</resources>

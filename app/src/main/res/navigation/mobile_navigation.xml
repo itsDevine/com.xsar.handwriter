@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:fontFamily="@font/raleway_semibold"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.xsar.handwriter.ui.home.HomeFragment"
+        android:label="HandWriter"
+        tools:layout="@layout/fragment_home"
+        app:fontFamily="@font/raleway_semibold"
+        />
+
+    <fragment
+        android:id="@+id/tutorials"
+        android:name="com.xsar.handwriter.ui.tutorial.FragmentTutorial"
+        android:label="Tutorial"
+        app:fontFamily="@font/raleway_semibold"
+        tools:layout="@layout/fragment_tutorial" />
+
+    <fragment
+        android:id="@+id/about_us"
+        android:name="com.xsar.handwriter.ui.aboutus.FragmentAboutUs"
+        android:label="About Us"
+        app:fontFamily="@font/raleway_semibold"
+        tools:layout="@layout/fragment_about_us" />
+
+
+</navigation>

@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/finaltoolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <ImageButton
+        android:id="@+id/finaladd1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/addfile"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/arrow_back_ripple"
+        app:layout_constraintTop_toTopOf="@id/finaltoolbar1"
+        app:layout_constraintBottom_toBottomOf="@id/finaltoolbar1"
+        app:layout_constraintRight_toLeftOf="@id/finalExport"
+        android:layout_marginLeft="10dp"/>
+
+    <GridView
+        android:id="@+id/imagesGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:numColumns="2"
+        app:layout_constraintTop_toBottomOf="@id/finaltoolbar1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/finalImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/fltoolbar"
+        app:layout_constraintTop_toBottomOf="@id/finaltoolbar1" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fltoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/customcamlt1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/finaldelete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/finaldeletebut"
+        app:layout_constraintTop_toTopOf="@id/finaltoolbar1"
+        app:layout_constraintBottom_toBottomOf="@id/finaltoolbar1"
+        app:layout_constraintRight_toRightOf="@id/finalExport"
+        android:visibility="invisible"
+        />
+
+
+    <Button
+        android:id="@+id/finaladd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/addbutton1"
+        app:layout_constraintTop_toTopOf="@id/fltoolbar"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintLeft_toRightOf="@id/finaldiagram"
+        app:layout_constraintRight_toLeftOf="@id/finalretake"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/finalretake"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:background="@drawable/retakebutton"
+        app:layout_constraintTop_toTopOf="@id/fltoolbar"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintLeft_toLeftOf="@id/fltoolbar"
+        app:layout_constraintRight_toLeftOf="@id/finaladd"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/finaldiagram"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/customcamgallery"
+        app:layout_constraintTop_toTopOf="@id/fltoolbar"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintLeft_toRightOf="@id/finaladd"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="invisible"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/finalExport"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:visibility="visible"
+        android:background="@drawable/save_text_bg"
+        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toTopOf="@id/finaltoolbar1"
+        app:layout_constraintRight_toRightOf="@id/finaltoolbar1"
+        app:layout_constraintBottom_toBottomOf="@id/finaltoolbar1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Export"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:fontFamily="@font/raleway_semibold"
+            />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/renameBackground2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparentblack"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text"
+        app:layout_constraintStart_toStartOf="@+id/edit_text"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar4" />
+
+
+    <LinearLayout
+        android:id="@+id/finalrenamelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rec_border"
+        android:visibility="invisible"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rename"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:clickable="false"
+            />
+
+        <EditText
+            android:id="@+id/finalfilename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="text"
+            android:maxLength="26"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:clickable="false"
+            >
+
+            <Button
+                android:id="@+id/finalrenamecancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:background="@color/transparent"/>
+
+            <Button
+                android:id="@+id/finalrenameok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:background="@color/transparent"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/exportBackground22"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparentblack"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text"
+        app:layout_constraintStart_toStartOf="@+id/edit_text"
+        app:layout_constraintTop_toTopOf="@+id/tool_bar4" />
+
+
+    <LinearLayout
+        android:id="@+id/exportLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/export_layout"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drop_down_design"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/raleway_semibold"
+            android:paddingTop="10dp"
+            android:text="Export as"
+            android:textSize="20dp"
+            android:paddingLeft="18dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/darkGrey"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:layout_weight="2">
+
+            <Button
+                android:id="@+id/exportPdf"
+                android:layout_width="55dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/pdficon" />
+
+            <Button
+                android:id="@+id/exportImages"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/exportasimageicon" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/finalDiagramView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#aaaaaa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/finalDragButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/resize_button"
+        app:layout_constraintTop_toBottomOf="@id/finalDiagramView"
+        app:layout_constraintRight_toRightOf="@id/finalDiagramView"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/cancelDiagram"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/close_icon"
+        app:layout_constraintLeft_toLeftOf="@id/finalDiagramView"
+        app:layout_constraintBottom_toTopOf="@id/finalDiagramView"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/okDiagram"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/okbut2"
+        app:layout_constraintRight_toRightOf="@id/finalDiagramView"
+        app:layout_constraintBottom_toTopOf="@id/finalDiagramView"
+        android:visibility="invisible"/>
+
+    <HorizontalScrollView
+        android:id="@+id/inkColorScroll"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#B3000000"
+        android:scrollbarThumbHorizontal="@color/buttonSelected"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/fltoolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ink_Colour_Black"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="BLACK"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ink_Colour_Grey"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Grey"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ink_Color_Blue"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Blue"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ink_Colour_DarkBlue"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Dark Blue"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ink_Colour_Red"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Red"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ink_Colour_DarkRed"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="Dark Red"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/originalDiagram"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:text="Original"
+        android:textAllCaps="false"
+        android:fontFamily="@font/raleway_semibold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:foreground="?android:selectableItemBackground"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/fltoolbar"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/inkDiagram"/>
+
+    <Button
+        android:id="@+id/inkDiagram"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:text="Ink"
+        android:foreground="?android:selectableItemBackground"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:fontFamily="@font/raleway_semibold"
+        android:textColor="@color/colorPrimary"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/fltoolbar"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/originalDiagram"/>
+
+    <ImageButton
+        android:id="@+id/eraseLayoutClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/close_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/eraseLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/eraseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/transparentblack"
+        android:padding="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/fltoolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="brush hardness"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
+        <SeekBar
+            android:id="@+id/brushHardness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="brush size"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
+        <SeekBar
+            android:id="@+id/brushSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
+            android:padding="10dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/paintDiagram"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintLeft_toLeftOf="@id/fltoolbar"
+        app:layout_constraintRight_toLeftOf="@id/eraseDiagram">
+
+        <Button
+            android:id="@+id/paintButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/brush" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/eraseDiagram"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/lightGrey"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/fltoolbar"
+        app:layout_constraintRight_toRightOf="@id/fltoolbar"
+        app:layout_constraintLeft_toRightOf="@id/paintDiagram">
+
+        <Button
+            android:id="@+id/eraseButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/eraser_button" />
+
+    </LinearLayout>
+
+
+
+    <View
+        android:id="@+id/loadingBG2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#bbffffff"/>
+
+    <TextView
+        android:id="@+id/loadingTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textAllCaps="true"
+        android:text="Drawing Diagram"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/raleway_semibold"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/loadingImageView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/loadingImageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loading_animation3"
+        android:background="@color/transparent"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

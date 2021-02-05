@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "319673480910",
+    "firebase_url": "https://handwriter-738f0.firebaseio.com",
+    "project_id": "handwriter-738f0",
+    "storage_bucket": "handwriter-738f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319673480910:android:162fc9350398a7d213829f",
+        "android_client_info": {
+          "package_name": "com.xsar.handwriter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319673480910-sb07gvejokg5g3er1r2mn9bii5bnc31c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xsar.handwriter",
+            "certificate_hash": "5bbbe4ec9501f69ad1de38e09591cf035b78c522"
+          }
+        },
+        {
+          "client_id": "319673480910-cv6dttee5oe4rvkp5tlth9uar2phevfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLMvgNN7hrQ40-4VSKZuUxolHl55gFET4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319673480910-cv6dttee5oe4rvkp5tlth9uar2phevfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
