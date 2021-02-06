@@ -34,7 +34,7 @@ public class ImageSliderAdapter extends SliderViewAdapter<SliderViewHolder> {
         return new SliderViewHolder(view);
     }
 
-
+    /*
     @Override
     public void onBindViewHolder(final SliderViewHolder viewHolder, final int position) {
         FirebaseDatabase.getInstance().getReference("Image").addValueEventListener(new ValueEventListener() {
@@ -104,7 +104,9 @@ public class ImageSliderAdapter extends SliderViewAdapter<SliderViewHolder> {
         });
     }
 
-     /*
+     */
+
+    //l,f,nlkfd b,fdlbdflb,fbldfnlbmfd. .szknsgn
 
     @Override
     public void onBindViewHolder(final SliderViewHolder viewHolder, final int position) {
@@ -174,7 +176,6 @@ public class ImageSliderAdapter extends SliderViewAdapter<SliderViewHolder> {
             }
         });
     }
-    */
 
 
     @Override
