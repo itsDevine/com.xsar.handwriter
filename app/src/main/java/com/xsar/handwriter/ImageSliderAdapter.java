@@ -107,6 +107,7 @@ public class ImageSliderAdapter extends SliderViewAdapter<SliderViewHolder> {
      */
 
     //l,f,nlkfd b,fdlbdflb,fbldfnlbmfd. .szknsgn
+    //l,f,nlkfd b,fdlbdflb,fbldfnlbmfd. .szknsgn
 
     @Override
     public void onBindViewHolder(final SliderViewHolder viewHolder, final int position) {
