@@ -2144,7 +2144,7 @@
         android:background="#B3000000"
         android:orientation="vertical"
         android:paddingTop="5dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/tool_bar44"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -2206,8 +2206,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/marginButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/marginButton" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -2281,7 +2279,7 @@
                 android:layout_gravity="center"
                 android:background="@color/transparent"
                 android:fontFamily="@font/raleway_semibold"
-                android:gravity="start |center_vertical"
+                android:gravity="start|center_vertical"
                 android:paddingLeft="20dp"
                 android:text="Draw lines"
                 android:textAllCaps="false"

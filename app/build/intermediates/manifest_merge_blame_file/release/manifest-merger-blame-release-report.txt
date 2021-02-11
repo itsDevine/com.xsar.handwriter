@@ -6,38 +6,38 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml
+8-->E:\Git\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml
+9-->E:\Git\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:5:5-65
-11-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:5:22-62
+11-->E:\Git\app\src\main\AndroidManifest.xml:5:5-65
+11-->E:\Git\app\src\main\AndroidManifest.xml:5:22-62
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-12-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:6:5-81
-12-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:6:22-78
+12-->E:\Git\app\src\main\AndroidManifest.xml:6:5-81
+12-->E:\Git\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
-13-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:7:5-81
-13-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:7:22-78
+13-->E:\Git\app\src\main\AndroidManifest.xml:7:5-81
+13-->E:\Git\app\src\main\AndroidManifest.xml:7:22-78
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:8:5-80
-14-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:8:22-77
+14-->E:\Git\app\src\main\AndroidManifest.xml:8:5-80
+14-->E:\Git\app\src\main\AndroidManifest.xml:8:22-77
 15    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
-15-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:9:5-80
-15-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:9:22-77
+15-->E:\Git\app\src\main\AndroidManifest.xml:9:5-80
+15-->E:\Git\app\src\main\AndroidManifest.xml:9:22-77
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:10:5-67
-16-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:10:22-64
+16-->E:\Git\app\src\main\AndroidManifest.xml:10:5-67
+16-->E:\Git\app\src\main\AndroidManifest.xml:10:22-64
 17    <uses-permission android:name="com.android.vending.BILLING" />
-17-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:11:5-67
-17-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:11:22-64
+17-->E:\Git\app\src\main\AndroidManifest.xml:11:5-67
+17-->E:\Git\app\src\main\AndroidManifest.xml:11:22-64
 18
 19    <uses-feature
-19-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:13:5-15:36
+19-->E:\Git\app\src\main\AndroidManifest.xml:13:5-15:36
 20        android:name="android.hardware.camera"
-20-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:14:9-47
+20-->E:\Git\app\src\main\AndroidManifest.xml:14:9-47
 21        android:required="false" />
-21-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:15:9-33
+21-->E:\Git\app\src\main\AndroidManifest.xml:15:9-33
 22
 23    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 24    <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -56,501 +56,502 @@
 29-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:27:22-78
 30
 31    <application
-31-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:18:5-104:19
+31-->E:\Git\app\src\main\AndroidManifest.xml:18:5-104:19
 32        android:name="androidx.multidex.MultiDexApplication"
 33        android:allowBackup="true"
-33-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:19:9-35
+33-->E:\Git\app\src\main\AndroidManifest.xml:19:9-35
 34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 34-->[androidx.core:core:1.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\270423ddb1671e01cac39989754ca36c\core-1.3.1\AndroidManifest.xml:24:18-86
 35        android:icon="@mipmap/ic_launcher"
-35-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:20:9-43
+35-->E:\Git\app\src\main\AndroidManifest.xml:20:9-43
 36        android:label="@string/app_name"
-36-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:21:9-41
+36-->E:\Git\app\src\main\AndroidManifest.xml:21:9-41
 37        android:requestLegacyExternalStorage="true"
-37-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:22:9-52
+37-->E:\Git\app\src\main\AndroidManifest.xml:22:9-52
 38        android:roundIcon="@mipmap/ic_launcher_round"
-38-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:23:9-54
+38-->E:\Git\app\src\main\AndroidManifest.xml:23:9-54
 39        android:supportsRtl="true"
-39-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:24:9-35
-40        android:theme="@style/AppTheme" >
-40-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:25:9-40
-41        <activity
-41-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:26:9-27:52
-42            android:name="com.xsar.handwriter.WalkThroughActivityInNext"
-42-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:26:19-60
-43            android:screenOrientation="portrait" />
-43-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:27:13-49
-44        <activity
-44-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:29:9-30:52
-45            android:name="com.xsar.handwriter.WalkThroughActivity"
-45-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:29:19-54
-46            android:screenOrientation="portrait" />
-46-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:30:13-49
-47        <activity
-47-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:32:9-33:52
-48            android:name="com.xsar.handwriter.PDF_Viewer"
-48-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:32:19-45
-49            android:screenOrientation="portrait" />
-49-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:33:13-49
-50        <activity android:name="com.xsar.handwriter.NewCustomCamera" />
-50-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:35:9-53
-50-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:35:19-50
-51        <activity android:name="com.xsar.handwriter.ActivityPurchased" />
-51-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:36:9-55
-51-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:36:19-52
-52        <activity android:name="com.xsar.handwriter.ActivityAddYourFont" />
-52-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:37:9-57
-52-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:37:19-54
-53        <activity
-53-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:38:9-40:52
-54            android:name="com.xsar.handwriter.Activity_Folder_Scanned"
-54-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:39:13-52
-55            android:screenOrientation="portrait" />
-55-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:40:13-49
-56        <activity
-56-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:41:9-43:52
-57            android:name="com.xsar.handwriter.Activity_Folder_PDF"
-57-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:42:13-48
-58            android:screenOrientation="portrait" />
-58-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:43:13-49
-59        <activity
-59-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:44:9-46:52
-60            android:name="com.xsar.handwriter.Activity_Folder_Text"
-60-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:45:13-49
-61            android:screenOrientation="portrait" />
-61-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:46:13-49
-62        <activity
-62-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:47:9-49:52
-63            android:name="com.xsar.handwriter.FinalActivity"
-63-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:48:13-42
-64            android:screenOrientation="portrait" />
-64-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:49:13-49
-65
-66        <meta-data
-66-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:51:9-53:70
-67            android:name="com.google.android.gms.ads.APPLICATION_ID"
-67-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:52:13-69
-68            android:value="ca-app-pub-9818307260762254~1966791439" />
-68-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:53:13-67
-69
-70        <activity
-70-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:55:9-57:52
-71            android:name="com.xsar.handwriter.text_recognizer"
-71-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:56:13-44
-72            android:screenOrientation="portrait" />
-72-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:57:13-49
-73        <activity
-73-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:58:9-60:52
-74            android:name="com.xsar.handwriter.image_editor"
-74-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:59:13-41
-75            android:screenOrientation="portrait" />
-75-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:60:13-49
-76        <activity
-76-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:61:9-63:52
-77            android:name="com.xsar.handwriter.activity_next"
-77-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:62:13-42
-78            android:screenOrientation="portrait" />
-78-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:63:13-49
-79        <activity
-79-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:64:9-66:52
-80            android:name="com.xsar.handwriter.activity_fab4"
-80-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:65:13-42
-81            android:screenOrientation="portrait" />
-81-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:66:13-49
-82        <activity
-82-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:67:9-71:59
-83            android:name="com.xsar.handwriter.MainActivity"
-83-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:68:13-41
-84            android:label="@string/title_activity_main"
-84-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:69:13-56
-85            android:screenOrientation="portrait"
-85-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:70:13-49
-86            android:theme="@style/AppTheme.NoActionBar" />
-86-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:71:13-56
-87        <activity
-87-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:72:9-75:54
-88            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-88-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:73:13-76
-89            android:screenOrientation="portrait"
-89-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:74:13-49
-90            android:theme="@style/Theme.AppCompat" />
-90-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:75:13-51
-91        <activity
-91-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:76:9-85:20
-92            android:name="com.xsar.handwriter.SplashActivity"
-92-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:77:13-43
-93            android:screenOrientation="portrait"
-93-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:78:13-49
-94            android:theme="@style/SplashTheme" >
-94-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:79:13-47
-95            <intent-filter>
-95-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:80:13-84:29
-96                <action android:name="android.intent.action.MAIN" />
-96-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:81:17-69
-96-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:81:25-66
-97
-98                <category android:name="android.intent.category.LAUNCHER" />
-98-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:83:17-77
-98-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:83:27-74
-99            </intent-filter>
-100        </activity>
-101
-102        <meta-data
-102-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:87:9-89:57
-103            android:name="preloaded_fonts"
-103-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:88:13-43
-104            android:resource="@array/preloaded_fonts" />
-104-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:89:13-54
-105
-106        <provider
-106-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:91:9-99:20
-107            android:name="androidx.core.content.FileProvider"
-107-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:92:13-62
-108            android:authorities="com.xsar.handwriter.fileprovider"
-108-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:93:13-67
-109            android:exported="false"
-109-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:94:13-37
-110            android:grantUriPermissions="true" >
-110-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:95:13-47
-111            <meta-data
-111-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:96:13-98:54
-112                android:name="android.support.FILE_PROVIDER_PATHS"
-112-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:97:17-67
-113                android:resource="@xml/file_paths" />
-113-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:98:17-51
-114        </provider>
-115
-116        <meta-data
-116-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:101:9-103:35
-117            android:name="com.google.android.gms.vision.DEPENDENCIES"
-117-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:102:13-70
-118            android:value="orc" />
-118-->C:\Users\dell\Desktop\Handwriter final\app\src\main\AndroidManifest.xml:103:13-32
-119
-120        <activity
-120-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:27:9-29:72
-121            android:name="com.karumi.dexter.DexterActivity"
-121-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:28:13-60
-122            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-122-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:29:13-69
-123
-124        <service
-124-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:29:9-35:19
-125            android:name="com.google.firebase.components.ComponentDiscoveryService"
-125-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:30:13-84
-126            android:directBootAware="true"
-126-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
-127            android:exported="false" >
-127-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:31:13-37
-128            <meta-data
-128-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:32:13-34:85
-129                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-129-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:33:17-109
-130                android:value="com.google.firebase.components.ComponentRegistrar" />
-130-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:34:17-82
-131        </service>
-132
-133        <provider
-133-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-134            android:name="com.squareup.picasso.PicassoProvider"
-134-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-135            android:authorities="com.xsar.handwriter.com.squareup.picasso"
-135-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-136            android:exported="false" />
-136-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-137
-138        <meta-data
-138-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:13:9-15:37
-139            android:name="com.google.android.play.billingclient.version"
-139-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:14:13-73
-140            android:value="3.0.1" />
-140-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:15:13-34
-141
-142        <activity
-142-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:17:9-21:75
-143            android:name="com.android.billingclient.api.ProxyBillingActivity"
-143-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:18:13-78
-144            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-144-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:19:13-96
-145            android:exported="false"
-145-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:20:13-37
-146            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- The activities will be merged into the manifest of the hosting app. -->
-146-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:21:13-72
-147        <activity
-147-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:5-271
-148            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
-148-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:15-102
-149            android:enabled="false"
-149-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:103-126
-150            android:exported="false"
-150-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:127-151
-151            android:launchMode="singleInstance"
-151-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:204-239
-152            android:process=":playcore_missing_splits_activity"
-152-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:152-203
-153            android:stateNotNeeded="true" />
-153-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:240-269
-154        <activity
-154-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:5-226
-155            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-155-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:15-95
-156            android:enabled="false"
-156-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:96-119
-157            android:exported="false"
-157-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:120-144
-158            android:stateNotNeeded="true"
-158-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:145-174
-159            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The service will be merged into the manifest of the hosting app. -->
-159-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:175-224
-160        <service
-160-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:5-145
-161            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
-161-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:14-95
-162            android:enabled="false"
-162-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:96-119
-163            android:exported="true" />
-163-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:120-143
-164
-165        <activity
-165-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-166-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-167            android:exported="false"
-167-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-168-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-169
-170        <provider
-170-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
-171            android:name="com.google.firebase.provider.FirebaseInitProvider"
-171-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
-172            android:authorities="com.xsar.handwriter.firebaseinitprovider"
-172-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
-173            android:directBootAware="true"
-173-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
-174            android:exported="false"
-174-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
-175            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-175-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
-176        <activity
-176-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:29:9-33:64
-177            android:name="com.google.android.gms.ads.AdActivity"
-177-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:30:13-65
-178            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-178-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:31:13-122
-179            android:exported="false"
-179-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:32:13-37
-180            android:theme="@android:style/Theme.Translucent" />
-180-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:33:13-61
-181
-182        <provider
-182-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:35:9-39:39
-183            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-183-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:36:13-76
-184            android:authorities="com.xsar.handwriter.mobileadsinitprovider"
-184-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:37:13-73
-185            android:exported="false"
-185-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:38:13-37
-186            android:initOrder="100" />
-186-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:39:13-36
-187
-188        <service
-188-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:41:9-44:40
-189            android:name="com.google.android.gms.ads.AdService"
-189-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:42:13-64
-190            android:enabled="true"
-190-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:43:13-35
-191            android:exported="false" />
-191-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:44:13-37
-192
-193        <meta-data
-193-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:23:9-25:69
-194            android:name="com.google.android.gms.version"
-194-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:24:13-58
-195            android:value="@integer/google_play_services_version" />
-195-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:25:13-66
-196
-197        <provider
-197-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:30:9-36:35
-198            android:name="androidx.work.impl.WorkManagerInitializer"
-198-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:31:13-69
-199            android:authorities="com.xsar.handwriter.workmanager-init"
-199-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:32:13-68
-200            android:directBootAware="false"
-200-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:33:13-44
-201            android:exported="false"
-201-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:34:13-37
-202            android:multiprocess="true" />
-202-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:35:13-40
-203
-204        <service
-204-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:38:9-43:35
-205            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-205-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:39:13-88
-206            android:directBootAware="false"
-206-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:40:13-44
-207            android:enabled="@bool/enable_system_alarm_service_default"
-207-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:41:13-72
-208            android:exported="false" />
-208-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:42:13-37
-209        <service
-209-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:44:9-50:35
-210            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-210-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:45:13-84
-211            android:directBootAware="false"
-211-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:46:13-44
-212            android:enabled="@bool/enable_system_job_service_default"
-212-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:47:13-70
-213            android:exported="true"
-213-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:48:13-36
-214            android:permission="android.permission.BIND_JOB_SERVICE" />
-214-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:49:13-69
-215
-216        <receiver
-216-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:52:9-57:35
-217            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-217-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:53:13-88
-218            android:directBootAware="false"
-218-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:54:13-44
-219            android:enabled="true"
-219-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:55:13-35
-220            android:exported="false" />
-220-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:56:13-37
-221        <receiver
-221-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:58:9-68:20
-222            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-222-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:59:13-106
-223            android:directBootAware="false"
-223-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:60:13-44
-224            android:enabled="false"
-224-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:61:13-36
-225            android:exported="false" >
-225-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:62:13-37
-226            <intent-filter>
-226-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:64:13-67:29
-227                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-227-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:65:17-87
-227-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:65:25-84
-228                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-228-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:66:17-90
-228-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:66:25-87
-229            </intent-filter>
-230        </receiver>
-231        <receiver
-231-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:69:9-79:20
-232            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-232-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:70:13-104
-233            android:directBootAware="false"
-233-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:71:13-44
-234            android:enabled="false"
-234-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:72:13-36
-235            android:exported="false" >
-235-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:73:13-37
-236            <intent-filter>
-236-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:75:13-78:29
-237                <action android:name="android.intent.action.BATTERY_OKAY" />
-237-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:76:17-77
-237-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:76:25-74
-238                <action android:name="android.intent.action.BATTERY_LOW" />
-238-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:77:17-76
-238-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:77:25-73
-239            </intent-filter>
-240        </receiver>
-241        <receiver
-241-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:80:9-90:20
-242            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-242-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:81:13-104
-243            android:directBootAware="false"
-243-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:82:13-44
-244            android:enabled="false"
-244-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:83:13-36
-245            android:exported="false" >
-245-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:84:13-37
-246            <intent-filter>
-246-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:86:13-89:29
-247                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-247-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:87:17-83
-247-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:87:25-80
-248                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-248-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:88:17-82
-248-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:88:25-79
-249            </intent-filter>
-250        </receiver>
-251        <receiver
-251-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:91:9-100:20
-252            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-252-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:92:13-103
-253            android:directBootAware="false"
-253-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:93:13-44
-254            android:enabled="false"
-254-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:94:13-36
-255            android:exported="false" >
-255-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:95:13-37
-256            <intent-filter>
-256-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:97:13-99:29
-257                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-257-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:98:17-79
-257-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:98:25-76
-258            </intent-filter>
-259        </receiver>
-260        <receiver
-260-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:101:9-112:20
-261            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-261-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:102:13-88
-262            android:directBootAware="false"
-262-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:103:13-44
-263            android:enabled="false"
-263-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:104:13-36
-264            android:exported="false" >
-264-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:105:13-37
-265            <intent-filter>
-265-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:107:13-111:29
-266                <action android:name="android.intent.action.BOOT_COMPLETED" />
-266-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:108:17-79
-266-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:108:25-76
-267                <action android:name="android.intent.action.TIME_SET" />
-267-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:109:17-73
-267-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:109:25-70
-268                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-268-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:110:17-81
-268-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:110:25-78
-269            </intent-filter>
-270        </receiver>
-271        <receiver
-271-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:113:9-122:20
-272            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-272-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:114:13-99
-273            android:directBootAware="false"
-273-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:115:13-44
-274            android:enabled="@bool/enable_system_alarm_service_default"
-274-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:116:13-72
-275            android:exported="false" >
-275-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:117:13-37
-276            <intent-filter>
-276-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:119:13-121:29
-277                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-277-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:120:17-98
-277-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:120:25-95
-278            </intent-filter>
-279        </receiver>
-280
-281        <service
-281-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
-282            android:name="androidx.room.MultiInstanceInvalidationService"
-282-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
-283            android:exported="false" />
-283-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
-284
-285        <provider
-285-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-286            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-286-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-287            android:authorities="com.xsar.handwriter.lifecycle-process"
-287-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-288            android:exported="false"
-288-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-289            android:multiprocess="true" />
-289-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-290    </application>
-291
-292</manifest>
+39-->E:\Git\app\src\main\AndroidManifest.xml:24:9-35
+40        android:testOnly="true"
+41        android:theme="@style/AppTheme" >
+41-->E:\Git\app\src\main\AndroidManifest.xml:25:9-40
+42        <activity
+42-->E:\Git\app\src\main\AndroidManifest.xml:26:9-27:52
+43            android:name="com.xsar.handwriter.WalkThroughActivityInNext"
+43-->E:\Git\app\src\main\AndroidManifest.xml:26:19-60
+44            android:screenOrientation="portrait" />
+44-->E:\Git\app\src\main\AndroidManifest.xml:27:13-49
+45        <activity
+45-->E:\Git\app\src\main\AndroidManifest.xml:29:9-30:52
+46            android:name="com.xsar.handwriter.WalkThroughActivity"
+46-->E:\Git\app\src\main\AndroidManifest.xml:29:19-54
+47            android:screenOrientation="portrait" />
+47-->E:\Git\app\src\main\AndroidManifest.xml:30:13-49
+48        <activity
+48-->E:\Git\app\src\main\AndroidManifest.xml:32:9-33:52
+49            android:name="com.xsar.handwriter.PDF_Viewer"
+49-->E:\Git\app\src\main\AndroidManifest.xml:32:19-45
+50            android:screenOrientation="portrait" />
+50-->E:\Git\app\src\main\AndroidManifest.xml:33:13-49
+51        <activity android:name="com.xsar.handwriter.NewCustomCamera" />
+51-->E:\Git\app\src\main\AndroidManifest.xml:35:9-53
+51-->E:\Git\app\src\main\AndroidManifest.xml:35:19-50
+52        <activity android:name="com.xsar.handwriter.ActivityPurchased" />
+52-->E:\Git\app\src\main\AndroidManifest.xml:36:9-55
+52-->E:\Git\app\src\main\AndroidManifest.xml:36:19-52
+53        <activity android:name="com.xsar.handwriter.ActivityAddYourFont" />
+53-->E:\Git\app\src\main\AndroidManifest.xml:37:9-57
+53-->E:\Git\app\src\main\AndroidManifest.xml:37:19-54
+54        <activity
+54-->E:\Git\app\src\main\AndroidManifest.xml:38:9-40:52
+55            android:name="com.xsar.handwriter.Activity_Folder_Scanned"
+55-->E:\Git\app\src\main\AndroidManifest.xml:39:13-52
+56            android:screenOrientation="portrait" />
+56-->E:\Git\app\src\main\AndroidManifest.xml:40:13-49
+57        <activity
+57-->E:\Git\app\src\main\AndroidManifest.xml:41:9-43:52
+58            android:name="com.xsar.handwriter.Activity_Folder_PDF"
+58-->E:\Git\app\src\main\AndroidManifest.xml:42:13-48
+59            android:screenOrientation="portrait" />
+59-->E:\Git\app\src\main\AndroidManifest.xml:43:13-49
+60        <activity
+60-->E:\Git\app\src\main\AndroidManifest.xml:44:9-46:52
+61            android:name="com.xsar.handwriter.Activity_Folder_Text"
+61-->E:\Git\app\src\main\AndroidManifest.xml:45:13-49
+62            android:screenOrientation="portrait" />
+62-->E:\Git\app\src\main\AndroidManifest.xml:46:13-49
+63        <activity
+63-->E:\Git\app\src\main\AndroidManifest.xml:47:9-49:52
+64            android:name="com.xsar.handwriter.FinalActivity"
+64-->E:\Git\app\src\main\AndroidManifest.xml:48:13-42
+65            android:screenOrientation="portrait" />
+65-->E:\Git\app\src\main\AndroidManifest.xml:49:13-49
+66
+67        <meta-data
+67-->E:\Git\app\src\main\AndroidManifest.xml:51:9-53:70
+68            android:name="com.google.android.gms.ads.APPLICATION_ID"
+68-->E:\Git\app\src\main\AndroidManifest.xml:52:13-69
+69            android:value="ca-app-pub-9818307260762254~1966791439" />
+69-->E:\Git\app\src\main\AndroidManifest.xml:53:13-67
+70
+71        <activity
+71-->E:\Git\app\src\main\AndroidManifest.xml:55:9-57:52
+72            android:name="com.xsar.handwriter.text_recognizer"
+72-->E:\Git\app\src\main\AndroidManifest.xml:56:13-44
+73            android:screenOrientation="portrait" />
+73-->E:\Git\app\src\main\AndroidManifest.xml:57:13-49
+74        <activity
+74-->E:\Git\app\src\main\AndroidManifest.xml:58:9-60:52
+75            android:name="com.xsar.handwriter.image_editor"
+75-->E:\Git\app\src\main\AndroidManifest.xml:59:13-41
+76            android:screenOrientation="portrait" />
+76-->E:\Git\app\src\main\AndroidManifest.xml:60:13-49
+77        <activity
+77-->E:\Git\app\src\main\AndroidManifest.xml:61:9-63:52
+78            android:name="com.xsar.handwriter.activity_next"
+78-->E:\Git\app\src\main\AndroidManifest.xml:62:13-42
+79            android:screenOrientation="portrait" />
+79-->E:\Git\app\src\main\AndroidManifest.xml:63:13-49
+80        <activity
+80-->E:\Git\app\src\main\AndroidManifest.xml:64:9-66:52
+81            android:name="com.xsar.handwriter.activity_fab4"
+81-->E:\Git\app\src\main\AndroidManifest.xml:65:13-42
+82            android:screenOrientation="portrait" />
+82-->E:\Git\app\src\main\AndroidManifest.xml:66:13-49
+83        <activity
+83-->E:\Git\app\src\main\AndroidManifest.xml:67:9-71:59
+84            android:name="com.xsar.handwriter.MainActivity"
+84-->E:\Git\app\src\main\AndroidManifest.xml:68:13-41
+85            android:label="@string/title_activity_main"
+85-->E:\Git\app\src\main\AndroidManifest.xml:69:13-56
+86            android:screenOrientation="portrait"
+86-->E:\Git\app\src\main\AndroidManifest.xml:70:13-49
+87            android:theme="@style/AppTheme.NoActionBar" />
+87-->E:\Git\app\src\main\AndroidManifest.xml:71:13-56
+88        <activity
+88-->E:\Git\app\src\main\AndroidManifest.xml:72:9-75:54
+89            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+89-->E:\Git\app\src\main\AndroidManifest.xml:73:13-76
+90            android:screenOrientation="portrait"
+90-->E:\Git\app\src\main\AndroidManifest.xml:74:13-49
+91            android:theme="@style/Theme.AppCompat" />
+91-->E:\Git\app\src\main\AndroidManifest.xml:75:13-51
+92        <activity
+92-->E:\Git\app\src\main\AndroidManifest.xml:76:9-85:20
+93            android:name="com.xsar.handwriter.SplashActivity"
+93-->E:\Git\app\src\main\AndroidManifest.xml:77:13-43
+94            android:screenOrientation="portrait"
+94-->E:\Git\app\src\main\AndroidManifest.xml:78:13-49
+95            android:theme="@style/SplashTheme" >
+95-->E:\Git\app\src\main\AndroidManifest.xml:79:13-47
+96            <intent-filter>
+96-->E:\Git\app\src\main\AndroidManifest.xml:80:13-84:29
+97                <action android:name="android.intent.action.MAIN" />
+97-->E:\Git\app\src\main\AndroidManifest.xml:81:17-69
+97-->E:\Git\app\src\main\AndroidManifest.xml:81:25-66
+98
+99                <category android:name="android.intent.category.LAUNCHER" />
+99-->E:\Git\app\src\main\AndroidManifest.xml:83:17-77
+99-->E:\Git\app\src\main\AndroidManifest.xml:83:27-74
+100            </intent-filter>
+101        </activity>
+102
+103        <meta-data
+103-->E:\Git\app\src\main\AndroidManifest.xml:87:9-89:57
+104            android:name="preloaded_fonts"
+104-->E:\Git\app\src\main\AndroidManifest.xml:88:13-43
+105            android:resource="@array/preloaded_fonts" />
+105-->E:\Git\app\src\main\AndroidManifest.xml:89:13-54
+106
+107        <provider
+107-->E:\Git\app\src\main\AndroidManifest.xml:91:9-99:20
+108            android:name="androidx.core.content.FileProvider"
+108-->E:\Git\app\src\main\AndroidManifest.xml:92:13-62
+109            android:authorities="com.xsar.handwriter.fileprovider"
+109-->E:\Git\app\src\main\AndroidManifest.xml:93:13-67
+110            android:exported="false"
+110-->E:\Git\app\src\main\AndroidManifest.xml:94:13-37
+111            android:grantUriPermissions="true" >
+111-->E:\Git\app\src\main\AndroidManifest.xml:95:13-47
+112            <meta-data
+112-->E:\Git\app\src\main\AndroidManifest.xml:96:13-98:54
+113                android:name="android.support.FILE_PROVIDER_PATHS"
+113-->E:\Git\app\src\main\AndroidManifest.xml:97:17-67
+114                android:resource="@xml/file_paths" />
+114-->E:\Git\app\src\main\AndroidManifest.xml:98:17-51
+115        </provider>
+116
+117        <meta-data
+117-->E:\Git\app\src\main\AndroidManifest.xml:101:9-103:35
+118            android:name="com.google.android.gms.vision.DEPENDENCIES"
+118-->E:\Git\app\src\main\AndroidManifest.xml:102:13-70
+119            android:value="orc" />
+119-->E:\Git\app\src\main\AndroidManifest.xml:103:13-32
+120
+121        <activity
+121-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:27:9-29:72
+122            android:name="com.karumi.dexter.DexterActivity"
+122-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:28:13-60
+123            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+123-->[com.karumi:dexter:6.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:29:13-69
+124
+125        <service
+125-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:29:9-35:19
+126            android:name="com.google.firebase.components.ComponentDiscoveryService"
+126-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:30:13-84
+127            android:directBootAware="true"
+127-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+128            android:exported="false" >
+128-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:31:13-37
+129            <meta-data
+129-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:32:13-34:85
+130                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+130-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:33:17-109
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-database:19.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a848b5730a31f4702f89e3efe525efcb\jetified-firebase-database-19.5.1\AndroidManifest.xml:34:17-82
+132        </service>
+133
+134        <provider
+134-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+135            android:name="com.squareup.picasso.PicassoProvider"
+135-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+136            android:authorities="com.xsar.handwriter.com.squareup.picasso"
+136-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+137            android:exported="false" />
+137-->[com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c834aea17b89a0ff257b99933cf2a657\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+138
+139        <meta-data
+139-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:13:9-15:37
+140            android:name="com.google.android.play.billingclient.version"
+140-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:14:13-73
+141            android:value="3.0.1" />
+141-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:15:13-34
+142
+143        <activity
+143-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:17:9-21:75
+144            android:name="com.android.billingclient.api.ProxyBillingActivity"
+144-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:18:13-78
+145            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+145-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:19:13-96
+146            android:exported="false"
+146-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:20:13-37
+147            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+147-->[com.android.billingclient:billing:3.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\1218b519049c6ea9ad54ccbbb9e841f0\jetified-billing-3.0.1\AndroidManifest.xml:21:13-72
+148        <activity
+148-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:5-271
+149            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+149-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:15-102
+150            android:enabled="false"
+150-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:103-126
+151            android:exported="false"
+151-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:127-151
+152            android:launchMode="singleInstance"
+152-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:204-239
+153            android:process=":playcore_missing_splits_activity"
+153-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:152-203
+154            android:stateNotNeeded="true" />
+154-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:12:240-269
+155        <activity
+155-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:5-226
+156            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+156-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:15-95
+157            android:enabled="false"
+157-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:96-119
+158            android:exported="false"
+158-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:120-144
+159            android:stateNotNeeded="true"
+159-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:145-174
+160            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The service will be merged into the manifest of the hosting app. -->
+160-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:13:175-224
+161        <service
+161-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:5-145
+162            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+162-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:14-95
+163            android:enabled="false"
+163-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:96-119
+164            android:exported="true" />
+164-->[com.google.android.play:core:1.8.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\352359d79c052de4ad2f5fe22d48effe\jetified-core-1.8.3\AndroidManifest.xml:16:120-143
+165
+166        <activity
+166-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+167            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+167-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+168            android:exported="false"
+168-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+169-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8073dd5f6a1e18eead1ec1c9796e6e96\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+170
+171        <provider
+171-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+172            android:name="com.google.firebase.provider.FirebaseInitProvider"
+172-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+173            android:authorities="com.xsar.handwriter.firebaseinitprovider"
+173-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+174            android:directBootAware="true"
+174-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+175            android:exported="false"
+175-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+176            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+176-->[com.google.firebase:firebase-common:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17f51ac305292b35035382b730480f98\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+177        <activity
+177-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:29:9-33:64
+178            android:name="com.google.android.gms.ads.AdActivity"
+178-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:30:13-65
+179            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+179-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:31:13-122
+180            android:exported="false"
+180-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:32:13-37
+181            android:theme="@android:style/Theme.Translucent" />
+181-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:33:13-61
+182
+183        <provider
+183-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:35:9-39:39
+184            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+184-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:36:13-76
+185            android:authorities="com.xsar.handwriter.mobileadsinitprovider"
+185-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:37:13-73
+186            android:exported="false"
+186-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:38:13-37
+187            android:initOrder="100" />
+187-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:39:13-36
+188
+189        <service
+189-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:41:9-44:40
+190            android:name="com.google.android.gms.ads.AdService"
+190-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:42:13-64
+191            android:enabled="true"
+191-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:43:13-35
+192            android:exported="false" />
+192-->[com.google.android.gms:play-services-ads-lite:19.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8b3b6c2b8724af3c34363e6070183680\jetified-play-services-ads-lite-19.5.0\AndroidManifest.xml:44:13-37
+193
+194        <meta-data
+194-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:23:9-25:69
+195            android:name="com.google.android.gms.version"
+195-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:24:13-58
+196            android:value="@integer/google_play_services_version" />
+196-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\c0312c337e0cb76cff1512ddf31cb3cf\jetified-play-services-basement-17.3.0\AndroidManifest.xml:25:13-66
+197
+198        <provider
+198-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:30:9-36:35
+199            android:name="androidx.work.impl.WorkManagerInitializer"
+199-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:31:13-69
+200            android:authorities="com.xsar.handwriter.workmanager-init"
+200-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:32:13-68
+201            android:directBootAware="false"
+201-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:33:13-44
+202            android:exported="false"
+202-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:34:13-37
+203            android:multiprocess="true" />
+203-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:35:13-40
+204
+205        <service
+205-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:38:9-43:35
+206            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+206-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:39:13-88
+207            android:directBootAware="false"
+207-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:40:13-44
+208            android:enabled="@bool/enable_system_alarm_service_default"
+208-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:41:13-72
+209            android:exported="false" />
+209-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:42:13-37
+210        <service
+210-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:44:9-50:35
+211            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+211-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:45:13-84
+212            android:directBootAware="false"
+212-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:46:13-44
+213            android:enabled="@bool/enable_system_job_service_default"
+213-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:47:13-70
+214            android:exported="true"
+214-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:48:13-36
+215            android:permission="android.permission.BIND_JOB_SERVICE" />
+215-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:49:13-69
+216
+217        <receiver
+217-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:52:9-57:35
+218            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+218-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:53:13-88
+219            android:directBootAware="false"
+219-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:54:13-44
+220            android:enabled="true"
+220-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:55:13-35
+221            android:exported="false" />
+221-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:56:13-37
+222        <receiver
+222-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:58:9-68:20
+223            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+223-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:59:13-106
+224            android:directBootAware="false"
+224-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:60:13-44
+225            android:enabled="false"
+225-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:61:13-36
+226            android:exported="false" >
+226-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:62:13-37
+227            <intent-filter>
+227-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:64:13-67:29
+228                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+228-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:65:17-87
+228-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:65:25-84
+229                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+229-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:66:17-90
+229-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:66:25-87
+230            </intent-filter>
+231        </receiver>
+232        <receiver
+232-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:69:9-79:20
+233            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+233-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:70:13-104
+234            android:directBootAware="false"
+234-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:71:13-44
+235            android:enabled="false"
+235-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:72:13-36
+236            android:exported="false" >
+236-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:73:13-37
+237            <intent-filter>
+237-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:75:13-78:29
+238                <action android:name="android.intent.action.BATTERY_OKAY" />
+238-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:76:17-77
+238-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:76:25-74
+239                <action android:name="android.intent.action.BATTERY_LOW" />
+239-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:77:17-76
+239-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:77:25-73
+240            </intent-filter>
+241        </receiver>
+242        <receiver
+242-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:80:9-90:20
+243            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+243-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:81:13-104
+244            android:directBootAware="false"
+244-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:82:13-44
+245            android:enabled="false"
+245-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:83:13-36
+246            android:exported="false" >
+246-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:84:13-37
+247            <intent-filter>
+247-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:86:13-89:29
+248                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+248-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:87:17-83
+248-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:87:25-80
+249                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+249-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:88:17-82
+249-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:88:25-79
+250            </intent-filter>
+251        </receiver>
+252        <receiver
+252-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:91:9-100:20
+253            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+253-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:92:13-103
+254            android:directBootAware="false"
+254-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:93:13-44
+255            android:enabled="false"
+255-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:94:13-36
+256            android:exported="false" >
+256-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:95:13-37
+257            <intent-filter>
+257-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:97:13-99:29
+258                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+258-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:98:17-79
+258-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:98:25-76
+259            </intent-filter>
+260        </receiver>
+261        <receiver
+261-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:101:9-112:20
+262            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+262-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:102:13-88
+263            android:directBootAware="false"
+263-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:103:13-44
+264            android:enabled="false"
+264-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:104:13-36
+265            android:exported="false" >
+265-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:105:13-37
+266            <intent-filter>
+266-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:107:13-111:29
+267                <action android:name="android.intent.action.BOOT_COMPLETED" />
+267-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:108:17-79
+267-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:108:25-76
+268                <action android:name="android.intent.action.TIME_SET" />
+268-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:109:17-73
+268-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:109:25-70
+269                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+269-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:110:17-81
+269-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:110:25-78
+270            </intent-filter>
+271        </receiver>
+272        <receiver
+272-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:113:9-122:20
+273            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+273-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:114:13-99
+274            android:directBootAware="false"
+274-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:115:13-44
+275            android:enabled="@bool/enable_system_alarm_service_default"
+275-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:116:13-72
+276            android:exported="false" >
+276-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:117:13-37
+277            <intent-filter>
+277-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:119:13-121:29
+278                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+278-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:120:17-98
+278-->[androidx.work:work-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\5e259440c400c5966624f00dbd191221\work-runtime-2.1.0\AndroidManifest.xml:120:25-95
+279            </intent-filter>
+280        </receiver>
+281
+282        <service
+282-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
+283            android:name="androidx.room.MultiInstanceInvalidationService"
+283-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
+284            android:exported="false" />
+284-->[androidx.room:room-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\28abc38683052a068d0857280b00402c\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
+285
+286        <provider
+286-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+287            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+287-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+288            android:authorities="com.xsar.handwriter.lifecycle-process"
+288-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+289            android:exported="false"
+289-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+290            android:multiprocess="true" />
+290-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\be51ccb4667690895def8d6ccdf62e4d\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+291    </application>
+292
+293</manifest>

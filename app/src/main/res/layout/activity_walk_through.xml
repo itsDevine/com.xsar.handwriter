@@ -52,6 +52,7 @@
             android:fontFamily="@font/gothambold"
             android:gravity="center"
             android:padding="20dp"
+            android:lineSpacingExtra="5dp"
             android:text="Let's get started"
             android:textAllCaps="false"
             android:textColor="@color/black"
@@ -345,6 +346,9 @@
         android:clickable="false"
         android:visibility="gone" />
 
+
+
+
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="150dp"
@@ -366,6 +370,17 @@
         app:layout_constraintTop_toTopOf="@+id/button_layout">
 
 
+        <Button
+            android:id="@+id/skipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="Skip"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/DummyfloatingActionButton1"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/DummyfloatingActionButton1"
@@ -571,294 +586,7 @@
             app:layout_constraintVertical_bias="0.8" />
 
 
-        <LinearLayout
-            android:id="@+id/clickHere1"
-            android:layout_width="250dp"
-            android:layout_height="130dp"
-            android:background="@drawable/instruction_bg"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/indicator_arrow1"
-            app:layout_constraintLeft_toLeftOf="parent">
 
-            <TextView
-                android:id="@+id/click_here"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="1dp"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothambold"
-                android:gravity="center"
-                android:text="Click Here"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/to_Open_Menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothammedium"
-                android:gravity="center"
-                android:lines="2"
-                android:lineSpacingExtra="5dp"
-                android:text="@string/main_menu"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/textBgDot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/circle_outline2"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/clickHere1"
-            app:layout_constraintEnd_toEndOf="@+id/clickHere1"
-            app:layout_constraintTop_toTopOf="@+id/clickHere1" />
-
-
-        <LinearLayout
-            android:id="@+id/clickHere2"
-            android:layout_width="250dp"
-            android:layout_height="160dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/instruction_bg"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/indicator_arrow2"
-            app:layout_constraintLeft_toLeftOf="parent">
-
-            <TextView
-                android:id="@+id/click_here2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="1dp"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothambold"
-                android:gravity="center"
-                android:text="Click Here"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/to_Open_Menu2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothammedium"
-                android:gravity="center"
-                android:lineSpacingExtra="5dp"
-                android:text="@string/open_camera"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/textBgDot2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/circle_outline2"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/clickHere2"
-            app:layout_constraintEnd_toEndOf="@+id/clickHere2"
-            app:layout_constraintTop_toTopOf="@+id/clickHere2" />
-
-
-        <LinearLayout
-            android:id="@+id/clickHere3BG"
-            android:layout_width="300dp"
-            android:layout_height="160dp"
-            android:background="@drawable/instruction_bg"
-            android:rotation="180"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout"/>
-
-        <LinearLayout
-            android:id="@+id/clickHere3"
-            android:layout_width="300dp"
-            android:layout_height="160dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/clickHere3BG"
-            app:layout_constraintEnd_toEndOf="@id/clickHere3BG"
-            app:layout_constraintTop_toTopOf="@id/clickHere3BG">
-
-            <TextView
-                android:id="@+id/click_here3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="1dp"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothambold"
-                android:gravity="center"
-                android:text="Click Here"
-                android:layout_marginLeft="10dp"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/to_Open_Menu3"
-                android:layout_width="200dp"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothammedium"
-                android:gravity="center"
-                android:lineSpacingExtra="5dp"
-                android:text="@string/open_gallery"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/textBgDot3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:src="@drawable/circle_outline2"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/clickHere3"
-            app:layout_constraintStart_toStartOf="@+id/clickHere3"
-            app:layout_constraintTop_toTopOf="@+id/clickHere3" />
-
-
-        <LinearLayout
-            android:id="@+id/clickHere4"
-            android:layout_width="300dp"
-            android:layout_height="160dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/instruction_bg"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout"
-            app:layout_constraintLeft_toLeftOf="parent">
-
-            <TextView
-                android:id="@+id/click_here4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="1dp"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothambold"
-                android:gravity="center"
-                android:layout_marginRight="10dp"
-                android:text="Click Here"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/to_Open_Menu4"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothammedium"
-                android:gravity="center"
-                android:lineSpacingExtra="5dp"
-                android:text="@string/open_storage"
-                android:textAllCaps="false"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/textBgDot4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/circle_outline2"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/clickHere4"
-            app:layout_constraintEnd_toEndOf="@+id/clickHere4"
-            app:layout_constraintTop_toTopOf="@+id/clickHere4" />
-
-
-        <LinearLayout
-            android:id="@+id/clickHere5BG"
-            android:layout_width="300dp"
-            android:layout_height="130dp"
-            android:background="@drawable/instruction_bg"
-            android:rotation="180"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/clickHere5"
-            android:layout_width="300dp"
-            android:layout_height="160dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/clickHere5BG"
-            app:layout_constraintEnd_toEndOf="@id/clickHere5BG"
-            app:layout_constraintStart_toStartOf="@id/clickHere5BG"
-            app:layout_constraintTop_toTopOf="@id/clickHere5BG">
-
-            <TextView
-                android:id="@+id/click_here5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="1dp"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothambold"
-                android:gravity="center"
-                android:text="Click Here"
-                android:textAllCaps="false"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/to_Open_Menu5"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/transparent"
-                android:fontFamily="@font/gothammedium"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:lineSpacingExtra="5dp"
-                android:text="@string/create_file"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/textBgDot5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:src="@drawable/circle_outline2"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/clickHere5BG"
-            app:layout_constraintStart_toStartOf="@+id/clickHere5BG"
-            app:layout_constraintTop_toTopOf="@+id/clickHere5BG" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
