@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\dell\\Desktop\\Handwriter final\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sr\\values-sr.xml",
+            "outputFile": "E:\\Git\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sr\\values-sr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dell\\.gradle\\caches\\transforms-2\\files-2.1\\7050932ce6fef59f2d76439e0de36657\\navigation-ui-2.3.1\\res\\values-sr\\values-sr.xml",
