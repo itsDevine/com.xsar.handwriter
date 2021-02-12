@@ -58,14 +58,14 @@ public class activity_next extends AppCompatActivity {
             fSel16, fSel17, fSel18, fSel19, fSel20, fSel21, fSel22, fSel23, fSel24, fSel25, fSel26, fSel27, fSel28, fSel29, fSel30,
             fSel31, fSel32, fSel33, fSel34, fSel35, fSel36, fSel37, fSel38, fSel39, fSel40,
             fSel41, fSel42, fSel43, fSel44, fSel45, fSel46, fSel47, fSel48, fSel49, fSel50, fSel51, fSel52, fSel53, fSel54, fSel55, fSel56,
-            cBut0, cBut1, cBut2, cBut3, cBut4, cBut5,cBut6, add_your_font, MarginButton;
+            cBut0, cBut1, cBut2, cBut3, cBut4, cBut5,cBut6, add_your_font, MarginButton, sideMarginButton, DrawLinesButton;
     EditText editText1;
-    ImageView pickImage, selected, selected2, unselected;
+    ImageView pickImage, selected, selected2, unselected, selected21, selected22, selected31, selected33;
     private Animation fromBottom, toBottom, captureanim;
     LinearLayout linearLayout, exportButton, linesLinearLayout, addBGFromGallery;
     HorizontalScrollView scrollView, textColorScrollView;
     public boolean retake = false, bgImageScroller = false, fontStyleSelector = false, colorSelector = false, capturedImage = false,
-            drawMargin = false, linesSelector = false, drawLines = false;
+            drawMargin = false, linesSelector = false, drawLines = false, drawSideMargin = false, drawlinesboolean=false;;
     int retakeno, backgroundSelected = 0, fontSelected = 0, fontSize = 50, fontColorSelected = 0,
             numOfImages = 0, vpad = 5, hpad = 5;
     float dist2,fontHeight = 8.2f;
@@ -83,8 +83,6 @@ public class activity_next extends AppCompatActivity {
     Toolbar toolbarcaptured;
 
     TextView textView;
-
-    SeekBar linesDistance, lineDistance2, linePaddingh, linePaddingv, fontSizebar,letterSpacing;
 
 
     private SharedPreferences prefs;
@@ -112,14 +110,20 @@ public class activity_next extends AppCompatActivity {
         colorClose = findViewById(R.id.Text_Color_Layout_close_Button);
 
         linesLinearLayout = (LinearLayout) findViewById(R.id.linesLinearLayout);
-        linesDistance = (SeekBar) findViewById(R.id.lineDist);
-        lineDistance2 = (SeekBar) findViewById(R.id.lineDist2);
-        linePaddingh = (SeekBar) findViewById(R.id.linepaddingh);
-        linePaddingv = (SeekBar) findViewById(R.id.linepaddingv);
         MarginButton = (Button) findViewById(R.id.marginButton);
+        sideMarginButton = (Button) findViewById(R.id.marginButton2);
+        DrawLinesButton = (Button) findViewById(R.id.lineButton);
+
         selected = (ImageView) findViewById(R.id.circle_selected);
         selected2 = (ImageView) findViewById(R.id.circle_selected2);
         unselected = (ImageView) findViewById(R.id.circle_unselected);
+
+        selected21 = (ImageView) findViewById(R.id.circle_selected21);
+        selected22 = (ImageView) findViewById(R.id.circle_selected22);
+
+        selected31 = (ImageView) findViewById(R.id.circle_selected3);
+        selected33 = (ImageView) findViewById(R.id.circle_selected23);
+
         walktroughNextbut = (ImageButton) findViewById(R.id.walkthroughNext);
 
         iV0 = findViewById(R.id.paper_image_0);
@@ -550,86 +554,8 @@ public class activity_next extends AppCompatActivity {
             }
         });
 
-        linesDistance.setMin(10);
-        linesDistance.setMax(50);
-        lineDistance2.setMin(0);
-        lineDistance2.setMax(50);
-        linePaddingh.setMin(20);
-        linePaddingh.setMax(200);
-        linePaddingv.setMin(20);
-        linePaddingv.setMax(300);
-        //linesDistance.setProgress(min);
-
-        linesDistance.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar linesDistance, int i, boolean b) {
 
 
-                final int Eheight = lineView.getHeight();
-                final int Ewidth = lineView.getWidth();
-                Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
-                Canvas canvas2 = new Canvas(newBitmap);
-                Paint paint2 = new Paint();
-                paint2.setColor(getResources().getColor(R.color.black));
-                paint2.setStyle(Paint.Style.STROKE);
-                paint2.setStrokeWidth(3);
-                float dist = (Eheight) / i;
-                //canvas2.drawLine(0,lineBitmap.getHeight()/2,lineBitmap.getWidth(),lineBitmap.getHeight()/2,paint2);
-                //editText1.draw(canvas2);
-
-                if (i > 10) {
-                    if (drawMargin) {
-                        dist2 = 3 * dist;
-                    } else {
-                        dist2 = 2 * dist;
-                    }
-                    for (int k = 0; k < Eheight / dist; k++) {
-
-                        canvas2.drawLine(0, dist2, Ewidth, dist2, paint2);
-                        dist2 = dist2 + dist;
-                    }
-                }
-                lineView.setBackground(new BitmapDrawable(getResources(), newBitmap));
-                Paint paint3 = new Paint();
-                paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
-                paint3.setStyle(Paint.Style.STROKE);
-                paint3.setStrokeWidth(4);
-
-                if (drawMargin) {
-                    canvas2.drawLine( dist, 0, dist, Eheight, paint3);
-                    canvas2.drawLine(0, (3 * dist) / 2, Ewidth, (3 * dist) / 2, paint3);
-                }
-
-                lineBitmap = newBitmap;
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar linesDistance) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar linesDistance) {
-
-            }
-        });
-
-        lineDistance2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                editText1.setLineSpacing(i, 1.0f);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
         MarginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -637,7 +563,7 @@ public class activity_next extends AppCompatActivity {
                 if (drawMargin) {
                     drawMargin = false;
                     MarginButton.setText("Include Margin");
-                    selected.setVisibility(View.INVISIBLE);
+                    selected.setVisibility(View.INVISIBLE);/*---------------------------------------------------------------*/
                     selected2.setVisibility(View.INVISIBLE);
                     editText1.setPadding(40,50,0,0);
                     Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
@@ -663,40 +589,43 @@ public class activity_next extends AppCompatActivity {
             }
         });
 
-        linePaddingh.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        sideMarginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                hpad = i;
-                editText1.setPadding(i, vpad, 0, 0);
-            }
+            public void onClick(View view) {
+                if (drawSideMargin){
+                    drawSideMargin=false;
+                    selected21.setVisibility(View.INVISIBLE);/*------------side margin onclick Listener--------------------*/
+                    selected22.setVisibility(View.INVISIBLE);
+                } else {
+                    selected21.setVisibility(View.VISIBLE);
+                    selected22.setVisibility(View.VISIBLE);
+                    drawSideMargin=true;
+                }
 
+
+
+                }
+            });
+
+        DrawLinesButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onClick(View view) {
+                if (drawlinesboolean){
+                    drawlinesboolean=false;
+                    selected31.setVisibility(View.INVISIBLE);/*-------drawLines Button On click listener-------*/
+                    selected33.setVisibility(View.INVISIBLE);
+                } else {
+                    selected31.setVisibility(View.VISIBLE);
+                    selected33.setVisibility(View.VISIBLE);
+                    drawlinesboolean=true;
+                }
 
-            }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
-        linePaddingv.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                vpad = i;
-                editText1.setPadding(hpad, i, 0, 0);
-            }
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
 
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
     }
 
