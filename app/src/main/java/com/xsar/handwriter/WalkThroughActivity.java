@@ -1,6 +1,7 @@
 package com.xsar.handwriter;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -27,10 +29,10 @@ public class WalkThroughActivity extends AppCompatActivity {
 
     FloatingActionButton Dfab1, Dfab2, Dfab3, Dfab4, Dfab5;
     View view;
+    Button skipButt;
     TextView mfabtext2, mfabtext3, mfabtext4, mfabtext5,
             clickHere, toOpenMenu;
-    LinearLayout clickHere1, clickHere2, clickHere3, click3BG, clickHere4, clickHere5, click5BG;
-    ImageView arrow1, arrow2, arrow3, arrow4, arrow5, Dot1, Dot2, Dot3, Dot4, Dot5;
+    ImageView arrow1, arrow2, arrow3, arrow4, arrow5;
     VideoView video;
     CardView cardViewWalkthrough;
     Button getStarted;
@@ -64,26 +66,13 @@ public class WalkThroughActivity extends AppCompatActivity {
         clickHere = findViewById(R.id.click_here);
         toOpenMenu = findViewById(R.id.to_Open_Menu);
         cardViewWalkthrough = findViewById(R.id.cardViewWalkthrough);
+        skipButt = findViewById(R.id.skipButton);
 
         arrow1 = findViewById(R.id.indicator_arrow1);
         arrow2 = findViewById(R.id.indicator_arrow2);
         arrow3 = findViewById(R.id.indicator_arrow3);
         arrow4 = findViewById(R.id.indicator_arrow4);
         arrow5 = findViewById(R.id.indicator_arrow5);
-
-        clickHere1 = findViewById(R.id.clickHere1);
-        clickHere2 = findViewById(R.id.clickHere2);
-        clickHere3 = findViewById(R.id.clickHere3);
-        click3BG = findViewById(R.id.clickHere3BG);
-        clickHere4 = findViewById(R.id.clickHere4);
-        clickHere5 = findViewById(R.id.clickHere5);
-        click5BG = findViewById(R.id.clickHere5BG);
-
-        Dot1 = findViewById(R.id.textBgDot);
-        Dot2 = findViewById(R.id.textBgDot2);
-        Dot3 = findViewById(R.id.textBgDot3);
-        Dot4 = findViewById(R.id.textBgDot4);
-        Dot5 = findViewById(R.id.textBgDot5);
 
         tv1 = (TextView) findViewById(R.id.click_here);
         tv2 = (TextView) findViewById(R.id.click_here2);
@@ -109,11 +98,16 @@ public class WalkThroughActivity extends AppCompatActivity {
         Dfab5 = findViewById(R.id.DummyfloatingActionButton5);
 
         homeUI();
-        walkThroughUI();
 
         Dfab1.setVisibility(View.INVISIBLE);
-        Dot1.setVisibility(View.INVISIBLE);
         view.setVisibility(View.VISIBLE);
+
+        skipButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -126,31 +120,18 @@ public class WalkThroughActivity extends AppCompatActivity {
 
             }
         }, 1000);
-/*
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getStarted.startAnimation(fadeout);
-                getStarted.setVisibility(View.INVISIBLE);
-
-            }
-        }, 2000);
-
- */
-
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Dot1.startAnimation(fromLeft);
-                Dot1.setVisibility(View.VISIBLE);
-                clickHere1.startAnimation(fromLeft);
-                clickHere1.setVisibility(View.VISIBLE);
                 view.setBackgroundColor(Color.parseColor("#ccffffff"));
                 Dfab1.setVisibility(View.VISIBLE);
 
                 arrow1.startAnimation(animation);
                 arrow1.setVisibility(View.VISIBLE);
+                skipButt.setVisibility(View.VISIBLE);
+
+                getStarted.setText(R.string.main_menu);
 
             }
         }, 2500);
@@ -159,9 +140,7 @@ public class WalkThroughActivity extends AppCompatActivity {
         Dfab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dot1.setVisibility(View.INVISIBLE);
-                clickHere1.setVisibility(View.INVISIBLE);
-                getStarted.setText("Good");
+                getStarted.setText(R.string.open_camera);
 
                 DummyonAddButtonClicked();
                 arrow1.clearAnimation();
@@ -179,10 +158,6 @@ public class WalkThroughActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Dot2.startAnimation(fromLeft);
-                        Dot2.setVisibility(View.VISIBLE);
-                        clickHere2.startAnimation(fromLeft);
-                        clickHere2.setVisibility(View.VISIBLE);
                     }
                 }, 250);
 
@@ -191,16 +166,14 @@ public class WalkThroughActivity extends AppCompatActivity {
                     public void run() {
                         Dfab2.setClickable(true);
                     }
-                }, 2000);
+                }, 500);
             }
         });
 
         Dfab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dot2.setVisibility(View.INVISIBLE);
-                clickHere2.setVisibility(View.INVISIBLE);
-                getStarted.setText("Perfect");
+                getStarted.setText(R.string.open_gallery);
 
                 arrow2.clearAnimation();
                 arrow2.setVisibility(View.GONE);
@@ -213,12 +186,6 @@ public class WalkThroughActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Dot3.startAnimation(fromRight);
-                        Dot3.setVisibility(View.VISIBLE);
-                        clickHere3.startAnimation(fromRight);
-                        clickHere3.setVisibility(View.VISIBLE);
-                        click3BG.startAnimation(fromRight);
-                        click3BG.setVisibility(View.VISIBLE);
                     }
                 }, 250);
 
@@ -227,7 +194,7 @@ public class WalkThroughActivity extends AppCompatActivity {
                     public void run() {
                         Dfab3.setClickable(true);
                     }
-                }, 2000);
+                }, 500);
 
 
             }
@@ -236,10 +203,7 @@ public class WalkThroughActivity extends AppCompatActivity {
         Dfab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dot3.setVisibility(View.INVISIBLE);
-                clickHere3.setVisibility(View.INVISIBLE);
-                click3BG.setVisibility(View.INVISIBLE);
-                getStarted.setText("Superb");
+                getStarted.setText(R.string.open_storage);
 
                 arrow3.clearAnimation();
                 arrow3.setVisibility(View.GONE);
@@ -252,10 +216,6 @@ public class WalkThroughActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Dot4.startAnimation(fromLeft);
-                        Dot4.setVisibility(View.VISIBLE);
-                        clickHere4.startAnimation(fromLeft);
-                        clickHere4.setVisibility(View.VISIBLE);
                     }
                 }, 250);
 
@@ -264,16 +224,14 @@ public class WalkThroughActivity extends AppCompatActivity {
                     public void run() {
                         Dfab4.setClickable(true);
                     }
-                }, 2000);
+                }, 500);
             }
         });
 
         Dfab4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dot4.setVisibility(View.INVISIBLE);
-                clickHere4.setVisibility(View.INVISIBLE);
-                getStarted.setText("Superb");
+                getStarted.setText(R.string.create_file);
 
                 arrow4.clearAnimation();
                 arrow4.setVisibility(View.GONE);
@@ -286,12 +244,6 @@ public class WalkThroughActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Dot5.startAnimation(fromRight);
-                        Dot5.setVisibility(View.VISIBLE);
-                        clickHere5.startAnimation(fromRight);
-                        clickHere5.setVisibility(View.VISIBLE);
-                        click5BG.startAnimation(fromRight);
-                        click5BG.setVisibility(View.VISIBLE);
                     }
                 }, 250);
 
@@ -300,16 +252,13 @@ public class WalkThroughActivity extends AppCompatActivity {
                     public void run() {
                         Dfab5.setClickable(true);
                     }
-                }, 2000);
+                }, 500);
             }
         });
 
         Dfab5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dot5.setVisibility(View.INVISIBLE);
-                clickHere5.setVisibility(View.INVISIBLE);
-                click5BG.setVisibility(View.INVISIBLE);
                 getStarted.setText("Excellent");
 
                 arrow5.clearAnimation();
@@ -351,57 +300,6 @@ public class WalkThroughActivity extends AppCompatActivity {
     }
 
 
-    public void walkThroughUI() {
-        Display display = getWindowManager().getDefaultDisplay();
-        int screenWidth = display.getWidth();
-        int screenHeight = display.getHeight();
-
-        CardView.MarginLayoutParams click1 = (CardView.MarginLayoutParams) clickHere1.getLayoutParams();
-        click1.width = (screenWidth * 60) / 100;
-        click1.height = (screenWidth * 30) / 100;
-        clickHere1.setLayoutParams(click1);
-
-        CardView.MarginLayoutParams click2 = (CardView.MarginLayoutParams) clickHere2.getLayoutParams();
-        click2.width = (screenWidth * 60) / 100;
-        click2.height = (screenWidth * 30) / 100;
-        clickHere2.setLayoutParams(click2);
-
-
-        CardView.MarginLayoutParams click3 = (CardView.MarginLayoutParams) clickHere3.getLayoutParams();
-        click3.width = (screenWidth * 60) / 100;
-        click3.height = (screenWidth * 30) / 100;
-        clickHere3.setLayoutParams(click3);
-
-        CardView.MarginLayoutParams click4 = (CardView.MarginLayoutParams) click3BG.getLayoutParams();
-        click4.width = (screenWidth * 60) / 100;
-        click4.height = (screenWidth * 30) / 100;
-        click3BG.setLayoutParams(click4);
-
-
-        CardView.MarginLayoutParams click5 = (CardView.MarginLayoutParams) clickHere4.getLayoutParams();
-        click5.width = (screenWidth * 60) / 100;
-        click5.height = (screenWidth * 30) / 100;
-        clickHere4.setLayoutParams(click5);
-
-
-        CardView.MarginLayoutParams click6 = (CardView.MarginLayoutParams) clickHere5.getLayoutParams();
-        click6.width = (screenWidth * 60) / 100;
-        click6.height = (screenWidth * 30) / 100;
-        clickHere5.setLayoutParams(click6);
-
-        CardView.MarginLayoutParams click7 = (CardView.MarginLayoutParams) click5BG.getLayoutParams();
-        click7.width = (screenWidth * 60) / 100;
-        click7.height = (screenWidth * 30) / 100;
-        click5BG.setLayoutParams(click7);
-
-        viewUI(tv1, stv1);
-        viewUI(tv2, stv2);
-        viewUI(tv3, stv3);
-        viewUI(tv4, stv4);
-        viewUI(tv5, stv5);
-
-
-    }
 
     private void viewUI(TextView textView, TextView textView2){
         Display display = getWindowManager().getDefaultDisplay();
@@ -459,4 +357,3 @@ public class WalkThroughActivity extends AppCompatActivity {
 
 
 
-/**/

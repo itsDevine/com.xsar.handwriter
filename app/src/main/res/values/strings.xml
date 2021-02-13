@@ -21,11 +21,11 @@
 
     <string name="mainMenu">1</string>
 
-    <string name="main_menu">to open"\n"Main Menu</string>
-    <string name="open_camera">to Capture"\n"Images from"\n"Camera</string>
-    <string name="open_gallery">to Import"\n"Images from"\n"Gallery</string>
-    <string name="open_storage">to Open Text"\n"Files from"\n"Storage</string>
-    <string name="create_file">to Create"\n"Text File</string>
+    <string name="main_menu">Click here"\n"to open"\n"Main Menu</string>
+    <string name="open_camera">Click here"\n"to Capture"\n"Images from"\n"Camera</string>
+    <string name="open_gallery">Click here"\n"to Import"\n"Images from"\n"Gallery</string>
+    <string name="open_storage">Click here"\n"to Open Text"\n"Files from"\n"Storage</string>
+    <string name="create_file">Click here"\n"to Create"\n"Text File</string>
 
     <string name="button1">to select Page for"\n"the background</string>
     <string name="button2">to edit Text,"\n"Text-Size and"\n"Choose Handwriting</string>
