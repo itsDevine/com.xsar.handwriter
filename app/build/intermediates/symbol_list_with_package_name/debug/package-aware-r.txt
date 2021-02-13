@@ -2860,6 +2860,7 @@ id showCustom
 id showHome
 id showMenu
 id showTitle
+id sideMarginView
 id sin
 id skipButton
 id skipCollapsed

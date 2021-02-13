@@ -68,9 +68,9 @@ public class activity_next extends AppCompatActivity {
             drawMargin = false, linesSelector = false, drawLines = false, drawSideMargin = false, drawlinesboolean=false;;
     int retakeno, backgroundSelected = 0, fontSelected = 0, fontSize = 50, fontColorSelected = 0,
             numOfImages = 0, vpad = 5, hpad = 5;
-    float dist2,fontHeight = 8.2f;
+    float dist2,fontHeight = 8.2f, lineDistance=0, topPadding;
     ArrayList<String> uris;
-    View lineView, marginView;
+    View lineView, marginView, sideMarginview;
 
     Integer[] backgroundPapers = {R.drawable.paper_background_3, R.drawable.paper_background_1, R.drawable.paper_background_2,
             R.drawable.paper_background_3, R.drawable.paper_background_4, R.drawable.paper_background_5,
@@ -78,7 +78,7 @@ public class activity_next extends AppCompatActivity {
 
     ArrayList<Bitmap> capturedImages = new ArrayList<Bitmap>();
 
-    Bitmap saveBitmap, lineBitmap, marginBitmap;
+    Bitmap saveBitmap, lineBitmap, marginBitmap, sideMarginBitmap;
 
     Toolbar toolbarcaptured;
 
@@ -93,6 +93,357 @@ public class activity_next extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
 
+        findViewById();
+        uris = new ArrayList<String>();
+        editText1.setText(getIntent().getStringExtra("edittext"));
+        editText1.setPadding(40,100,0,0);
+        //setUI();
+        setInvisible();
+        fromBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.from_bottom_original_size);
+        toBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.to_bottom_original_size);
+        captureanim = AnimationUtils.loadAnimation(this,R.anim.captureanimation);
+
+
+
+        boolean isFirstRun2 = getSharedPreferences("PREFERENCE2", MODE_PRIVATE).getBoolean("isFirstRun2", true);
+        if (isFirstRun2) {
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
+                    startActivity(intent);
+                }
+            }, 500);
+
+        }
+        getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit().putBoolean("isFirstRun2", false).apply();
+
+        walktroughNextbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
+                startActivity(intent);
+            }
+        });
+
+       // defaultButtonsSelected();
+
+
+        exportButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onClick(View view) {
+
+                if (!capturedImage) {
+
+
+                    if (numOfImages > 0) {
+                        goToFinalize();
+                    } else {
+                        guidance2.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+
+
+        guidance2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guidance2.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        imageButton1Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!bgImageScroller) {
+                        setInvisible();
+                        setFalse();
+                        // scrollView.startAnimation(fromBottom);
+                        scrollView.setVisibility(View.VISIBLE);
+                        backgroundWallpaperClose.setVisibility(View.VISIBLE);
+                        bgImageScroller = true;
+                    } else {
+                        //scrollView.startAnimation(toBottom);
+                        setInvisible();
+                        bgImageScroller = false;
+                    }
+                }
+            }
+
+        });
+
+        imageButton1_OnClickListener();
+
+        imageButton2Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!fontStyleSelector) {
+                        setInvisible();
+                        setFalse();
+                        linearLayout.setVisibility(View.VISIBLE);
+                        fontLayoutClose.setVisibility(View.VISIBLE);
+                        fontStyleSelector = true;
+                    } else {
+                        setInvisible();
+                        fontStyleSelector = false;
+                    }
+                }
+            }
+        });
+
+        imageButton2_OnClickListener();
+
+        imageButton3Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!colorSelector) {
+                        setInvisible();
+                        setFalse();
+                        textColorScrollView.setVisibility(View.VISIBLE);
+                        colorClose.setVisibility(View.VISIBLE);
+                        colorSelector = true;
+                    } else {
+                        setInvisible();
+                        colorSelector = false;
+                    }
+                }
+            }
+        });
+
+        imageButton3_OnClickListener();
+
+        imageButton4Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (!capturedImage) {
+                    if (!linesSelector) {
+                        setInvisible();
+                        setFalse();
+                        linesLinearLayout.setVisibility(View.VISIBLE);
+                        linesSelector = true;
+                    } else {
+                        setInvisible();
+                        linesSelector = false;
+                    }
+                }
+
+            }
+        });
+
+        addBGFromGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pick_image_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(pick_image_intent, 120);
+            }
+        });
+
+        /*add_your_font.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_next.this, ActivityAddYourFont.class);
+                startActivity(intent);
+            }
+        });*/
+
+
+        CaptureButtonDuplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureImage();
+            }
+        });
+
+        capturedAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureAccept();
+            }
+        });
+
+        capturedDecline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureDecline();
+            }
+        });
+
+
+        backgroundWallpaperClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+        fontLayoutClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+        colorClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    finish();
+                }
+            }
+        });
+        SeekBar seekBar = findViewById(R.id.FontSizeBar);
+        SeekBar seekBar2 = findViewById(R.id.letterSpacingBar);
+
+        prefs = getPreferences(MODE_PRIVATE);
+        float fs = prefs.getFloat("fontsize", 14);
+        seekBar.setMin(50);
+        seekBar.setMax(80);
+        seekBar.setProgress((int) fs);
+        editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
+                fontSize = i;
+                if(drawLines){
+                    drawLines(fontHeight,i);
+                }
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                prefs = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putFloat("fontsize", editText1.getTextSize());
+                editor.commit();
+
+            }
+        });
+
+        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar2, int progress, boolean b) {
+                float floatProgress = (float) progress / 500;
+                editText1.setLetterSpacing(floatProgress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar2) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar2) {
+
+            }
+        });
+
+        MarginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawMargin) {
+                    drawMargin = false;
+                    selected.setVisibility(View.INVISIBLE);/*---------------------------------------------------------------*/
+                    selected2.setVisibility(View.INVISIBLE);
+                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
+                    marginBitmap = newBitmap;
+                } else {
+                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+                    Canvas canvas3 = new Canvas(newBitmap);
+                    Paint paint3 = new Paint();
+                    paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
+                    paint3.setStyle(Paint.Style.STROKE);
+                    paint3.setStrokeWidth(3);
+                    canvas3.drawLine(0,78,marginView.getWidth(),78,paint3);
+                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
+                    marginBitmap = newBitmap;
+                    drawMargin = true;
+                    selected.setVisibility(View.VISIBLE);
+                    selected2.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        sideMarginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawSideMargin){
+                    drawSideMargin=false;
+                    selected21.setVisibility(View.INVISIBLE);/*------------side margin onclick Listener--------------------*/
+                    selected22.setVisibility(View.INVISIBLE);
+                    editText1.setPadding(40,100,0,0);
+                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+                    sideMarginview.setBackground(new BitmapDrawable(getResources(), newBitmap));
+                    sideMarginBitmap = newBitmap;
+                } else {
+                    selected21.setVisibility(View.VISIBLE);
+                    selected22.setVisibility(View.VISIBLE);
+                    editText1.setPadding(60,100,0,0);
+                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+                    Canvas canvas3 = new Canvas(newBitmap);
+                    Paint paint3 = new Paint();
+                    paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
+                    paint3.setStyle(Paint.Style.STROKE);
+                    paint3.setStrokeWidth(3);
+                    canvas3.drawLine(48,0,48,marginView.getHeight(),paint3);
+                    sideMarginview.setBackground(new BitmapDrawable(getResources(), newBitmap));
+                    sideMarginBitmap = newBitmap;
+                    drawSideMargin=true;
+                }
+                }
+            });
+
+        DrawLinesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawLines){
+                    eraseLines();
+                    selected31.setVisibility(View.INVISIBLE);/*-------drawLines Button On click listener-------*/
+                    selected33.setVisibility(View.INVISIBLE);
+                } else {
+                    drawLines(fontHeight,fontSize);
+                    selected31.setVisibility(View.VISIBLE);
+                    selected33.setVisibility(View.VISIBLE);
+                }
+
+
+
+            }
+        });
+
+
+
+    }
+
+    private void findViewById(){
         backButton = findViewById(R.id.back_button);
         exportButton = findViewById(R.id.export_btn);
         guidance2 = findViewById(R.id.guidance2);
@@ -222,410 +573,8 @@ public class activity_next extends AppCompatActivity {
         textView = findViewById(R.id.pages_tv);
         lineView = (View) findViewById(R.id.lineView);
         marginView = (View) findViewById(R.id.marginView);
+        sideMarginview = (View) findViewById(R.id.sideMarginView);
         addBGFromGallery = (LinearLayout) findViewById(R.id.addFromGallery);
-
-        fromBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.from_bottom_original_size);
-        toBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.to_bottom_original_size);
-        captureanim = AnimationUtils.loadAnimation(this,R.anim.captureanimation);
-
-        boolean isFirstRun2 = getSharedPreferences("PREFERENCE2", MODE_PRIVATE).getBoolean("isFirstRun2", true);
-        if (isFirstRun2) {
-
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
-                    startActivity(intent);
-                }
-            }, 500);
-
-        }
-        getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit().putBoolean("isFirstRun2", false).apply();
-
-        walktroughNextbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
-                startActivity(intent);
-            }
-        });
-
-       // defaultButtonsSelected();
-
-        uris = new ArrayList<String>();
-
-        editText1.setText(getIntent().getStringExtra("edittext"));
-        //setUI();
-        setInvisible();
-
-        exportButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public void onClick(View view) {
-
-                if (!capturedImage) {
-
-
-                    if (numOfImages > 0) {
-                        goToFinalize();
-                    } else {
-                        guidance2.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        });
-
-        guidance2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                guidance2.setVisibility(View.INVISIBLE);
-            }
-        });
-
-        imageButton1Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!bgImageScroller) {
-                        setInvisible();
-                        setFalse();
-                        // scrollView.startAnimation(fromBottom);
-                        scrollView.setVisibility(View.VISIBLE);
-                        backgroundWallpaperClose.setVisibility(View.VISIBLE);
-                        bgImageScroller = true;
-                    } else {
-                        //scrollView.startAnimation(toBottom);
-                        setInvisible();
-                        bgImageScroller = false;
-                    }
-                }
-            }
-
-        });
-
-        imageButton1_OnClickListener();
-
-        imageButton2Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!fontStyleSelector) {
-                        setInvisible();
-                        setFalse();
-                        linearLayout.setVisibility(View.VISIBLE);
-                        fontLayoutClose.setVisibility(View.VISIBLE);
-                        fontStyleSelector = true;
-                    } else {
-                        setInvisible();
-                        fontStyleSelector = false;
-                    }
-                }
-            }
-        });
-
-        imageButton2_OnClickListener();
-
-        imageButton3Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!colorSelector) {
-                        setInvisible();
-                        setFalse();
-                        textColorScrollView.setVisibility(View.VISIBLE);
-                        colorClose.setVisibility(View.VISIBLE);
-                        colorSelector = true;
-                    } else {
-                        setInvisible();
-                        colorSelector = false;
-                    }
-                }
-            }
-        });
-
-        imageButton3_OnClickListener();
-
-        imageButton4Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (!capturedImage) {
-                    if (!linesSelector) {
-                        setInvisible();
-                        setFalse();
-                        linesLinearLayout.setVisibility(View.VISIBLE);
-                        linesSelector = true;
-                    } else {
-                        setInvisible();
-                        linesSelector = false;
-                    }
-                }
-
-            }
-        });
-
-        addBGFromGallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent pick_image_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(pick_image_intent, 120);
-            }
-        });
-
-        /*add_your_font.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity_next.this, ActivityAddYourFont.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-        CaptureButtonDuplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    CaptureButton.startAnimation(captureanim);
-                    setInvisible();
-                    setFalse();
-                    editText1.setCursorVisible(false);
-                    editText1.clearFocus();
-                    editText1.buildDrawingCache();
-                    Bitmap newBItmap1 = Bitmap.createBitmap(editText1.getDrawingCache());
-                    final int Eheight = lineView.getHeight();
-                    final int Ewidth = lineView.getWidth();
-                    Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
-                    Canvas canvas2 = new Canvas(newBitmap);
-                    canvas2.drawBitmap(newBItmap1,0,0,null);
-                    if(lineBitmap!= null){
-                        canvas2.drawBitmap(lineBitmap,0,0,null);
-                    }
-                    saveBitmap = newBitmap;
-                    pickImage.setVisibility(View.VISIBLE);
-                    pickImage.setImageBitmap(saveBitmap);
-                    capturedAccept.setVisibility(View.VISIBLE);
-                    capturedDecline.setVisibility(View.VISIBLE);
-                    toolbarcaptured.setVisibility(View.VISIBLE);
-                    editText1.destroyDrawingCache();
-                    capturedImage = true;
-                    pickImage.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                        }
-                    });
-                }
-            }
-        });
-
-        capturedAccept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                capturedImages.add(saveBitmap);
-                capturedAccept.setVisibility(View.INVISIBLE);
-                capturedDecline.setVisibility(View.INVISIBLE);
-                pickImage.setVisibility(View.INVISIBLE);
-                textView.setVisibility(View.VISIBLE);
-                editText1.setCursorVisible(true);
-                capturedImage = false;
-                numOfImages++;
-                textView.setText("Pages : " + numOfImages);
-                toolbarcaptured.setVisibility(View.INVISIBLE);
-                if (retake == true) {
-                    retake = false;
-                    exportButton.setVisibility(View.VISIBLE);
-                    try {
-                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                        String imageFileName = "Handwriter_" + timeStamp;
-                        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                        File file = File.createTempFile(imageFileName, ".jpg", storageDir);
-                        FileOutputStream fileOutputStream = new FileOutputStream(file);
-                        saveBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-                        uris.set(retakeno - 1, file.getAbsolutePath());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    Intent finalIntent = new Intent(activity_next.this, FinalActivity.class);
-                    finalIntent.putExtra("capturedImages", uris);
-                    startActivityForResult(finalIntent, 100);
-                }
-            }
-        });
-
-        capturedDecline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                capturedAccept.setVisibility(View.INVISIBLE);
-                capturedDecline.setVisibility(View.INVISIBLE);
-                pickImage.setVisibility(View.INVISIBLE);
-                editText1.setCursorVisible(true);
-                capturedImage = false;
-                toolbarcaptured.setVisibility(View.INVISIBLE);
-            }
-        });
-
-
-        backgroundWallpaperClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-        fontLayoutClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-        colorClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    finish();
-                }
-            }
-        });
-        SeekBar seekBar = findViewById(R.id.FontSizeBar);
-        SeekBar seekBar2 = findViewById(R.id.letterSpacingBar);
-
-        prefs = getPreferences(MODE_PRIVATE);
-        float fs = prefs.getFloat("fontsize", 14);
-        seekBar.setMin(50);
-        seekBar.setMax(80);
-        seekBar.setProgress((int) fs);
-        editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
-
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
-                fontSize = i;
-                if(drawLines){
-                    drawLines(fontHeight,i);
-                }
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                prefs = getPreferences(MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putFloat("fontsize", editText1.getTextSize());
-                editor.commit();
-
-            }
-        });
-
-        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar2, int progress, boolean b) {
-                float floatProgress = (float) progress / 500;
-                editText1.setLetterSpacing(floatProgress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar2) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar2) {
-
-            }
-        });
-
-
-
-
-        MarginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawMargin) {
-                    drawMargin = false;
-                    MarginButton.setText("Include Margin");
-                    selected.setVisibility(View.INVISIBLE);/*---------------------------------------------------------------*/
-                    selected2.setVisibility(View.INVISIBLE);
-                    editText1.setPadding(40,50,0,0);
-                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
-                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
-                    marginBitmap = newBitmap;
-                } else {
-                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas3 = new Canvas(newBitmap);
-                    Paint paint3 = new Paint();
-                    paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
-                    paint3.setStyle(Paint.Style.STROKE);
-                    paint3.setStrokeWidth(3);
-                    editText1.setPadding(60,100,0,0);
-                    canvas3.drawLine(0,78,marginView.getWidth(),78,paint3);
-                    canvas3.drawLine(48,0,48,marginView.getHeight(),paint3);
-                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
-                    marginBitmap = newBitmap;
-                    drawMargin = true;
-                    selected.setVisibility(View.VISIBLE);
-                    selected2.setVisibility(View.VISIBLE);
-                    drawLines(fontHeight,fontSize);
-                }
-            }
-        });
-
-        sideMarginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawSideMargin){
-                    drawSideMargin=false;
-                    selected21.setVisibility(View.INVISIBLE);/*------------side margin onclick Listener--------------------*/
-                    selected22.setVisibility(View.INVISIBLE);
-                } else {
-                    selected21.setVisibility(View.VISIBLE);
-                    selected22.setVisibility(View.VISIBLE);
-                    drawSideMargin=true;
-                }
-
-
-
-                }
-            });
-
-        DrawLinesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawlinesboolean){
-                    drawlinesboolean=false;
-                    selected31.setVisibility(View.INVISIBLE);/*-------drawLines Button On click listener-------*/
-                    selected33.setVisibility(View.INVISIBLE);
-                } else {
-                    selected31.setVisibility(View.VISIBLE);
-                    selected33.setVisibility(View.VISIBLE);
-                    drawlinesboolean=true;
-                }
-
-
-
-            }
-        });
-
-
 
     }
 
@@ -732,6 +681,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel0.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 8.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -743,6 +695,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel1.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -754,7 +709,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel2.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -4.9f;
-
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -766,6 +723,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel3.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -4f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -777,6 +737,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel4.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3.6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -788,6 +751,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel5.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -12f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -799,6 +765,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel6.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3.6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -810,6 +779,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel7.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3.9f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -821,6 +793,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel8.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -4.5f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
 
             }
         });
@@ -833,6 +808,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel9.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3.6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -844,6 +822,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel10.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -855,6 +836,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel11.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -866,6 +850,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel12.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -877,6 +864,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel13.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -4.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -888,6 +878,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fsel14.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -899,6 +892,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fsel15.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -910,6 +906,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel16.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -921,6 +920,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel17.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 3.6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -932,6 +934,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel18.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -943,6 +948,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel19.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -954,6 +962,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel20.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -965,6 +976,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel21.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -976,6 +990,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel22.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -987,6 +1004,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel23.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -998,6 +1018,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel24.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1009,6 +1032,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel25.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.5f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1020,6 +1046,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel26.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1031,6 +1060,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel27.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.2f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1042,6 +1074,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel28.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.4f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1053,6 +1088,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel29.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-3.4f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1064,6 +1102,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel30.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=-4.8f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1075,6 +1116,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel31.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=2.1f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1086,6 +1130,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel32.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=8f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1097,6 +1144,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel33.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=100f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1108,6 +1158,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel34.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=22f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1119,6 +1172,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel35.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1130,6 +1186,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel36.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=1.06f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1141,6 +1200,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel37.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=100f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1152,6 +1214,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel38.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=15f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1163,6 +1228,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel39.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=4.55f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1174,6 +1242,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel40.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=4.3f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1185,6 +1256,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel41.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight=10.05f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
 
             }
         });
@@ -1197,6 +1271,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel42.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 2.6f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1208,6 +1285,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel43.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.75f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1219,6 +1299,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel44.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.44f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1230,6 +1313,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel45.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 4f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1241,6 +1327,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel46.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 2.8f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1252,6 +1341,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel47.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.8f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1263,6 +1355,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel48.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.36f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1274,6 +1369,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel49.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 100f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1285,6 +1383,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel50.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = -100f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1296,6 +1397,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel51.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 0.94f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1307,6 +1411,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel52.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.18f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1318,6 +1425,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel53.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 0.94f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1329,6 +1439,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel54.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.05f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1340,6 +1453,9 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel55.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.95f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
 
@@ -1351,8 +1467,12 @@ public class activity_next extends AppCompatActivity {
                 defaultFontBackground();
                 fSel56.setBackgroundResource(R.drawable.activity_next_bg);
                 fontHeight = 1.82f;
+                if(drawLines){
+                    drawLines(fontHeight,fontSize);
+                }
             }
         });
+
 
 
     }
@@ -1661,6 +1781,81 @@ public class activity_next extends AppCompatActivity {
         Canvas canvas2 = new Canvas(newBitmap);
         lineView.setBackground(new BitmapDrawable(getResources(), newBitmap));
         lineBitmap = newBitmap;
+    }
+
+    private void captureImage(){
+        if (!capturedImage) {
+            CaptureButton.startAnimation(captureanim);
+            setInvisible();
+            setFalse();
+            editText1.setCursorVisible(false);
+            editText1.clearFocus();
+            editText1.buildDrawingCache();
+            Bitmap newBItmap1 = Bitmap.createBitmap(editText1.getDrawingCache());
+            final int Eheight = lineView.getHeight();
+            final int Ewidth = lineView.getWidth();
+            Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
+            Canvas canvas2 = new Canvas(newBitmap);
+            canvas2.drawBitmap(newBItmap1,0,0,null);
+            if(drawLines){
+                canvas2.drawBitmap(lineBitmap,0,0,null);
+            }
+            if(drawMargin){
+                canvas2.drawBitmap(marginBitmap,0,0,null);
+            }
+            if (drawSideMargin){
+                canvas2.drawBitmap(sideMarginBitmap,0,0,null);
+            }
+
+            saveBitmap = newBitmap;
+            pickImage.setVisibility(View.VISIBLE);
+            pickImage.setImageBitmap(saveBitmap);
+            capturedAccept.setVisibility(View.VISIBLE);
+            capturedDecline.setVisibility(View.VISIBLE);
+            toolbarcaptured.setVisibility(View.VISIBLE);
+            editText1.destroyDrawingCache();
+            capturedImage = true;
+        }
+    }
+
+    private void captureAccept(){
+        capturedImages.add(saveBitmap);
+        capturedAccept.setVisibility(View.INVISIBLE);
+        capturedDecline.setVisibility(View.INVISIBLE);
+        pickImage.setVisibility(View.INVISIBLE);
+        textView.setVisibility(View.VISIBLE);
+        editText1.setCursorVisible(true);
+        capturedImage = false;
+        numOfImages++;
+        textView.setText("Pages : " + numOfImages);
+        toolbarcaptured.setVisibility(View.INVISIBLE);
+        if (retake == true) {
+            retake = false;
+            exportButton.setVisibility(View.VISIBLE);
+            try {
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "Handwriter_" + timeStamp;
+                File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                File file = File.createTempFile(imageFileName, ".jpg", storageDir);
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                saveBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                uris.set(retakeno - 1, file.getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Intent finalIntent = new Intent(activity_next.this, FinalActivity.class);
+            finalIntent.putExtra("capturedImages", uris);
+            startActivityForResult(finalIntent, 100);
+        }
+    }
+
+    private void captureDecline(){
+        capturedAccept.setVisibility(View.INVISIBLE);
+        capturedDecline.setVisibility(View.INVISIBLE);
+        pickImage.setVisibility(View.INVISIBLE);
+        editText1.setCursorVisible(true);
+        capturedImage = false;
+        toolbarcaptured.setVisibility(View.INVISIBLE);
     }
 
 }
