@@ -2080,6 +2080,7 @@ drawable paste
 drawable pdf_1
 drawable pdf_file_but_400px
 drawable pdf_file_but_600px
+drawable pdffileicon
 drawable pdficon
 drawable primary_arrow
 drawable rate_us
@@ -2110,6 +2111,7 @@ drawable textfileicon07
 drawable textfileicon08
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable txtfileicon
 drawable vertical_options
 drawable video_tutorials
 drawable walkthrough_icon
@@ -2929,7 +2931,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id text_Colour_Black
 id text_Colour_Blue
 id text_Colour_DarkBlue

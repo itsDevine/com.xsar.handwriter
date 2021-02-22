@@ -16,12 +16,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kb_paper_background_3.jpg.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\kb_paper_background_3.jpg"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle_outline.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\circle_outline.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kb_paper_background_3.jpg.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\kb_paper_background_3.jpg"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\raw_success_icon.mp4.flat",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\circle_outline.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_fileshare.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\fileshare.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_create_new_folder_24.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_create_new_folder_24.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_fileshare.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\fileshare.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_settings_icon.png.flat",
@@ -144,12 +144,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\car2.jpg"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_new_logo.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\new_logo.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_fonts2020.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\fonts2020.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_new_logo.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\new_logo.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_okbut2.png.flat",
@@ -244,12 +244,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_text_file.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\text_file.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_finaldeletebut.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\finaldeletebut.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_text_file.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\text_file.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_help_outline.png.flat",
@@ -264,12 +264,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\fileshare.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_grey_dark_ripple.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\grey_dark_ripple.xml"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\font_hwfonts44.ttf.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\hwfonts44.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_grey_dark_ripple.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\grey_dark_ripple.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_circle_2.xml.flat",
@@ -312,12 +312,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\mic_icon.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_color2_2020.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\color2_2020.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_okbut.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\okbut.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_color2_2020.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\color2_2020.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_camera_pic.png.flat",
@@ -376,12 +376,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\handwriterfont6_yashwanth.ttf"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_fab4.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\layout\\activity_fab4.xml"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_settings_icon.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable-mdpi\\settings_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_fab4.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\layout\\activity_fab4.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_mic_icon.png.flat",
@@ -396,12 +396,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\hw_logo.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_flash_on.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\flash_on.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_purchased.xml.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\layout\\activity_purchased.xml"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_flash_on.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\flash_on.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_more_vert_24.png.flat",
@@ -456,24 +456,24 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\layout\\activity_text_recognizer.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_camera_pic.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\camera_pic.xml"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\font_helvetica.ttf.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\helvetica.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_camera_pic.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\camera_pic.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_white_circle_outline.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\white_circle_outline.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_white_arrow.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\white_arrow.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\font_handwriting_03.ttf.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\handwriting_03.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_white_arrow.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\white_arrow.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_share.png.flat",
@@ -488,12 +488,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\kb_paper_background_6.jpeg"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\anim_captureanimation.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\anim\\captureanimation.xml"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_documents_icon.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\documents_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\anim_captureanimation.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\anim\\captureanimation.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_color_select1.png.flat",
@@ -520,12 +520,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\text_file_but_600px.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_papers1.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\papers1.xml"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_options_ripple.xml.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\options_ripple.xml"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_papers1.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\papers1.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_circle_outline.png.flat",
@@ -594,10 +594,6 @@
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\menu_search_menu.xml.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\menu\\search_menu.xml"
-    },
-    {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_txtfileicon.jpg.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\txtfileicon.jpg"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_circle_2.png.flat",
@@ -740,12 +736,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\share_primary.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_close_icon.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\close_icon.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_your_font.xml.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\layout\\activity_add_your_font.xml"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_close_icon.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\close_icon.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_rename_primary.png.flat",
@@ -836,12 +832,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\sort_by_alpha.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_color_select.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\color_select.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_l25.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\l25.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_color_select.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\color_select.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_edit_pic.png.flat",
@@ -968,12 +964,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\mipmap\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hw_logo_white.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\hw_logo_white.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_customtick.xml.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\customtick.xml"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hw_logo_white.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\hw_logo_white.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_latest_file_red.png.flat",
@@ -1164,16 +1160,16 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\anim\\rotate_open_anim.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_walkthrough_icon.xml.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\walkthrough_icon.xml"
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_addfile.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\addfile.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_contact_us.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\contact_us.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_addfile.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\addfile.png"
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_walkthrough_icon.xml.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\walkthrough_icon.xml"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_copy_pic.png.flat",
@@ -1220,12 +1216,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_menu_camera.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_sort_by_alpha.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\sort_by_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_eraser_button.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\eraser_button.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_sort_by_alpha.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\sort_by_alpha.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_l23.png.flat",
@@ -1248,12 +1244,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\okbut.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_home_icon.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\home_icon.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_circle_1.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\circle_1.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_home_icon.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\home_icon.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_customtick.png.flat",
@@ -1360,12 +1356,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\arrow_back.xml"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_video_tutorials.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\video_tutorials.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\font_handwriting_02.ttf.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\handwriting_02.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_video_tutorials.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\video_tutorials.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pdf_1.png.flat",
@@ -1448,12 +1444,12 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\sort_by_alpha.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_scanner_icon.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\scanner_icon.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\font_handwriting_01.ttf.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\font\\handwriting_01.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_scanner_icon.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\scanner_icon.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_filerename.png.flat",
@@ -1496,24 +1492,24 @@
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\share.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_share.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\share.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_arrow_forward_24.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_arrow_forward_24.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_share.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\share.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_l21.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\l21.png"
     },
     {
-        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_select_icon.png.flat",
-        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\select_icon.png"
-    },
-    {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_more_vert_24.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_more_vert_24.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_select_icon.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\select_icon.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_menu_icon.png.flat",
@@ -2602,6 +2598,10 @@
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pdffileicon.png.flat",
         "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\pdffileicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_txtfileicon.png.flat",
+        "source": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\src\\main\\res\\drawable\\txtfileicon.png"
     },
     {
         "merged": "C:\\Users\\ROSHAN\\StudioProjects\\com.xsar.handwriter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_copy_pic.png.flat",
