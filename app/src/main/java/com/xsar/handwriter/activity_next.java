@@ -66,11 +66,11 @@ public class activity_next extends AppCompatActivity {
     HorizontalScrollView scrollView, textColorScrollView;
     public boolean retake = false, bgImageScroller = false, fontStyleSelector = false, colorSelector = false, capturedImage = false,
             drawMargin = false, linesSelector = false, drawLines = false, drawSideMargin = false, drawlinesboolean=false;;
-    int retakeno, backgroundSelected = 0, fontSelected = 0, fontSize = 50, fontColorSelected = 0,
+    int retakeno, backgroundSelected = 0, fontSelected = 0, fontSize = 50, fontColorSelected = 0, topPadding, sidePadding = 40 ,fontHeight,
             numOfImages = 0, vpad = 5, hpad = 5;
-    float dist2,fontHeight = 8.2f;
+    float dist2, lineDistance=0 ;
     ArrayList<String> uris;
-    View lineView, marginView;
+    View lineView, marginView, sideMarginview;
 
     Integer[] backgroundPapers = {R.drawable.paper_background_3, R.drawable.paper_background_1, R.drawable.paper_background_2,
             R.drawable.paper_background_3, R.drawable.paper_background_4, R.drawable.paper_background_5,
@@ -78,7 +78,7 @@ public class activity_next extends AppCompatActivity {
 
     ArrayList<Bitmap> capturedImages = new ArrayList<Bitmap>();
 
-    Bitmap saveBitmap, lineBitmap, marginBitmap;
+    Bitmap saveBitmap, lineBitmap, marginBitmap, sideMarginBitmap;
 
     Toolbar toolbarcaptured;
 
@@ -93,6 +93,365 @@ public class activity_next extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
 
+        findViewById();
+        uris = new ArrayList<String>();
+        editText1.setText(getIntent().getStringExtra("edittext"));
+        editText1.setPadding(40,115,0,0);
+        topPadding = 118;
+        fontHeight = 87;
+
+        //setUI();
+        setInvisible();
+        fromBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.from_bottom_original_size);
+        toBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.to_bottom_original_size);
+        captureanim = AnimationUtils.loadAnimation(this,R.anim.captureanimation);
+
+
+
+        boolean isFirstRun2 = getSharedPreferences("PREFERENCE2", MODE_PRIVATE).getBoolean("isFirstRun2", true);
+        if (isFirstRun2) {
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
+                    startActivity(intent);
+                }
+            }, 500);
+
+        }
+        getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit().putBoolean("isFirstRun2", false).apply();
+
+        walktroughNextbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
+                startActivity(intent);
+            }
+        });
+
+       // defaultButtonsSelected();
+
+
+        exportButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onClick(View view) {
+
+                if (!capturedImage) {
+
+
+                    if (numOfImages > 0) {
+                        goToFinalize();
+                    } else {
+                        guidance2.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+
+
+        guidance2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guidance2.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        imageButton1Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!bgImageScroller) {
+                        setInvisible();
+                        setFalse();
+                        // scrollView.startAnimation(fromBottom);
+                        scrollView.setVisibility(View.VISIBLE);
+                        backgroundWallpaperClose.setVisibility(View.VISIBLE);
+                        bgImageScroller = true;
+                    } else {
+                        //scrollView.startAnimation(toBottom);
+                        setInvisible();
+                        bgImageScroller = false;
+                    }
+                }
+            }
+
+        });
+
+        imageButton1_OnClickListener();
+
+        imageButton2Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!fontStyleSelector) {
+                        setInvisible();
+                        setFalse();
+                        linearLayout.setVisibility(View.VISIBLE);
+                        fontLayoutClose.setVisibility(View.VISIBLE);
+                        fontStyleSelector = true;
+                    } else {
+                        setInvisible();
+                        fontStyleSelector = false;
+                    }
+                }
+            }
+        });
+
+        imageButton2_OnClickListener();
+
+        imageButton3Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    if (!colorSelector) {
+                        setInvisible();
+                        setFalse();
+                        textColorScrollView.setVisibility(View.VISIBLE);
+                        colorClose.setVisibility(View.VISIBLE);
+                        colorSelector = true;
+                    } else {
+                        setInvisible();
+                        colorSelector = false;
+                    }
+                }
+            }
+        });
+
+        imageButton3_OnClickListener();
+
+        imageButton4Duplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (!capturedImage) {
+                    if (!linesSelector) {
+                        setInvisible();
+                        setFalse();
+                        linesLinearLayout.setVisibility(View.VISIBLE);
+                        linesSelector = true;
+                    } else {
+                        setInvisible();
+                        linesSelector = false;
+                    }
+                }
+
+            }
+        });
+
+        addBGFromGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pick_image_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(pick_image_intent, 120);
+            }
+        });
+
+        /*add_your_font.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_next.this, ActivityAddYourFont.class);
+                startActivity(intent);
+            }
+        });*/
+
+
+        CaptureButtonDuplicate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureImage();
+            }
+        });
+
+        capturedAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureAccept();
+            }
+        });
+
+        capturedDecline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureDecline();
+            }
+        });
+
+
+        backgroundWallpaperClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+        fontLayoutClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+        colorClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setInvisible();
+                setFalse();
+            }
+        });
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!capturedImage) {
+                    finish();
+                }
+            }
+        });
+        SeekBar seekBar = findViewById(R.id.FontSizeBar);
+        SeekBar seekBar2 = findViewById(R.id.letterSpacingBar);
+
+        prefs = getPreferences(MODE_PRIVATE);
+        float fs = prefs.getFloat("fontsize", 14);
+        seekBar.setMin(50);
+        seekBar.setMax(80);
+        seekBar.setProgress((int) fs);
+        editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
+                fontSize = i;
+                editText1.setLineHeight(fontHeight);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                prefs = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putFloat("fontsize", editText1.getTextSize());
+                editor.commit();
+
+            }
+        });
+
+        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar2, int progress, boolean b) {
+                float floatProgress = (float) progress / 500;
+                editText1.setLetterSpacing(floatProgress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar2) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar2) {
+
+            }
+        });
+
+        MarginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                topMargin();
+            }
+        });
+
+        sideMarginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    sideMargin();
+                }
+            });
+
+        DrawLinesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawLines){
+                    eraseLines();
+                    selected31.setVisibility(View.INVISIBLE);/*-------drawLines Button On click listener-------*/
+                    selected33.setVisibility(View.INVISIBLE);
+                } else {
+                    drawLines(fontHeight,fontSize);
+                    selected31.setVisibility(View.VISIBLE);
+                    selected33.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        editText1.setLineHeight(87);
+
+
+    }
+
+    private void topMargin() {
+        if (drawMargin) {
+            drawMargin = false;
+            selected.setVisibility(View.INVISIBLE);/*---------------------------------------------------------------*/
+            selected2.setVisibility(View.INVISIBLE);
+            Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+            marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
+            marginBitmap = newBitmap;
+        } else {
+            Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas3 = new Canvas(newBitmap);
+            Paint paint3 = new Paint();
+            paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
+            paint3.setStyle(Paint.Style.STROKE);
+            paint3.setStrokeWidth(3);
+            canvas3.drawLine(0,78,marginView.getWidth(),78,paint3);
+            marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
+            marginBitmap = newBitmap;
+            drawMargin = true;
+            selected.setVisibility(View.VISIBLE);
+            selected2.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void sideMargin() {
+        if (drawSideMargin){
+            drawSideMargin=false;
+            selected21.setVisibility(View.INVISIBLE);/*------------side margin onclick Listener--------------------*/
+            selected22.setVisibility(View.INVISIBLE);
+            editText1.setPadding(40,topPadding,0,0);
+            sidePadding = 40;
+            Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+            sideMarginview.setBackground(new BitmapDrawable(getResources(), newBitmap));
+            sideMarginBitmap = newBitmap;
+        } else {
+            selected21.setVisibility(View.VISIBLE);
+            selected22.setVisibility(View.VISIBLE);
+            editText1.setPadding(60,topPadding,0,0);
+            sidePadding = 60;
+            Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas3 = new Canvas(newBitmap);
+            Paint paint3 = new Paint();
+            paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
+            paint3.setStyle(Paint.Style.STROKE);
+            paint3.setStrokeWidth(3);
+            canvas3.drawLine(48,0,48,marginView.getHeight(),paint3);
+            sideMarginview.setBackground(new BitmapDrawable(getResources(), newBitmap));
+            sideMarginBitmap = newBitmap;
+            drawSideMargin=true;
+        }
+    }
+
+    private void findViewById(){
         backButton = findViewById(R.id.back_button);
         exportButton = findViewById(R.id.export_btn);
         guidance2 = findViewById(R.id.guidance2);
@@ -222,410 +581,8 @@ public class activity_next extends AppCompatActivity {
         textView = findViewById(R.id.pages_tv);
         lineView = (View) findViewById(R.id.lineView);
         marginView = (View) findViewById(R.id.marginView);
+        sideMarginview = (View) findViewById(R.id.sideMarginView);
         addBGFromGallery = (LinearLayout) findViewById(R.id.addFromGallery);
-
-        fromBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.from_bottom_original_size);
-        toBottom = AnimationUtils.loadAnimation(activity_next.this, R.anim.to_bottom_original_size);
-        captureanim = AnimationUtils.loadAnimation(this,R.anim.captureanimation);
-
-        boolean isFirstRun2 = getSharedPreferences("PREFERENCE2", MODE_PRIVATE).getBoolean("isFirstRun2", true);
-        if (isFirstRun2) {
-
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
-                    startActivity(intent);
-                }
-            }, 500);
-
-        }
-        getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit().putBoolean("isFirstRun2", false).apply();
-
-        walktroughNextbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity_next.this, WalkThroughActivityInNext.class);
-                startActivity(intent);
-            }
-        });
-
-       // defaultButtonsSelected();
-
-        uris = new ArrayList<String>();
-
-        editText1.setText(getIntent().getStringExtra("edittext"));
-        //setUI();
-        setInvisible();
-
-        exportButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public void onClick(View view) {
-
-                if (!capturedImage) {
-
-
-                    if (numOfImages > 0) {
-                        goToFinalize();
-                    } else {
-                        guidance2.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        });
-
-        guidance2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                guidance2.setVisibility(View.INVISIBLE);
-            }
-        });
-
-        imageButton1Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!bgImageScroller) {
-                        setInvisible();
-                        setFalse();
-                        // scrollView.startAnimation(fromBottom);
-                        scrollView.setVisibility(View.VISIBLE);
-                        backgroundWallpaperClose.setVisibility(View.VISIBLE);
-                        bgImageScroller = true;
-                    } else {
-                        //scrollView.startAnimation(toBottom);
-                        setInvisible();
-                        bgImageScroller = false;
-                    }
-                }
-            }
-
-        });
-
-        imageButton1_OnClickListener();
-
-        imageButton2Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!fontStyleSelector) {
-                        setInvisible();
-                        setFalse();
-                        linearLayout.setVisibility(View.VISIBLE);
-                        fontLayoutClose.setVisibility(View.VISIBLE);
-                        fontStyleSelector = true;
-                    } else {
-                        setInvisible();
-                        fontStyleSelector = false;
-                    }
-                }
-            }
-        });
-
-        imageButton2_OnClickListener();
-
-        imageButton3Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    if (!colorSelector) {
-                        setInvisible();
-                        setFalse();
-                        textColorScrollView.setVisibility(View.VISIBLE);
-                        colorClose.setVisibility(View.VISIBLE);
-                        colorSelector = true;
-                    } else {
-                        setInvisible();
-                        colorSelector = false;
-                    }
-                }
-            }
-        });
-
-        imageButton3_OnClickListener();
-
-        imageButton4Duplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (!capturedImage) {
-                    if (!linesSelector) {
-                        setInvisible();
-                        setFalse();
-                        linesLinearLayout.setVisibility(View.VISIBLE);
-                        linesSelector = true;
-                    } else {
-                        setInvisible();
-                        linesSelector = false;
-                    }
-                }
-
-            }
-        });
-
-        addBGFromGallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent pick_image_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(pick_image_intent, 120);
-            }
-        });
-
-        /*add_your_font.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity_next.this, ActivityAddYourFont.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-        CaptureButtonDuplicate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    CaptureButton.startAnimation(captureanim);
-                    setInvisible();
-                    setFalse();
-                    editText1.setCursorVisible(false);
-                    editText1.clearFocus();
-                    editText1.buildDrawingCache();
-                    Bitmap newBItmap1 = Bitmap.createBitmap(editText1.getDrawingCache());
-                    final int Eheight = lineView.getHeight();
-                    final int Ewidth = lineView.getWidth();
-                    Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
-                    Canvas canvas2 = new Canvas(newBitmap);
-                    canvas2.drawBitmap(newBItmap1,0,0,null);
-                    if(lineBitmap!= null){
-                        canvas2.drawBitmap(lineBitmap,0,0,null);
-                    }
-                    saveBitmap = newBitmap;
-                    pickImage.setVisibility(View.VISIBLE);
-                    pickImage.setImageBitmap(saveBitmap);
-                    capturedAccept.setVisibility(View.VISIBLE);
-                    capturedDecline.setVisibility(View.VISIBLE);
-                    toolbarcaptured.setVisibility(View.VISIBLE);
-                    editText1.destroyDrawingCache();
-                    capturedImage = true;
-                    pickImage.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                        }
-                    });
-                }
-            }
-        });
-
-        capturedAccept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                capturedImages.add(saveBitmap);
-                capturedAccept.setVisibility(View.INVISIBLE);
-                capturedDecline.setVisibility(View.INVISIBLE);
-                pickImage.setVisibility(View.INVISIBLE);
-                textView.setVisibility(View.VISIBLE);
-                editText1.setCursorVisible(true);
-                capturedImage = false;
-                numOfImages++;
-                textView.setText("Pages : " + numOfImages);
-                toolbarcaptured.setVisibility(View.INVISIBLE);
-                if (retake == true) {
-                    retake = false;
-                    exportButton.setVisibility(View.VISIBLE);
-                    try {
-                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                        String imageFileName = "Handwriter_" + timeStamp;
-                        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                        File file = File.createTempFile(imageFileName, ".jpg", storageDir);
-                        FileOutputStream fileOutputStream = new FileOutputStream(file);
-                        saveBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-                        uris.set(retakeno - 1, file.getAbsolutePath());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    Intent finalIntent = new Intent(activity_next.this, FinalActivity.class);
-                    finalIntent.putExtra("capturedImages", uris);
-                    startActivityForResult(finalIntent, 100);
-                }
-            }
-        });
-
-        capturedDecline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                capturedAccept.setVisibility(View.INVISIBLE);
-                capturedDecline.setVisibility(View.INVISIBLE);
-                pickImage.setVisibility(View.INVISIBLE);
-                editText1.setCursorVisible(true);
-                capturedImage = false;
-                toolbarcaptured.setVisibility(View.INVISIBLE);
-            }
-        });
-
-
-        backgroundWallpaperClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-        fontLayoutClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-        colorClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setInvisible();
-                setFalse();
-            }
-        });
-
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!capturedImage) {
-                    finish();
-                }
-            }
-        });
-        SeekBar seekBar = findViewById(R.id.FontSizeBar);
-        SeekBar seekBar2 = findViewById(R.id.letterSpacingBar);
-
-        prefs = getPreferences(MODE_PRIVATE);
-        float fs = prefs.getFloat("fontsize", 14);
-        seekBar.setMin(50);
-        seekBar.setMax(80);
-        seekBar.setProgress((int) fs);
-        editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
-
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                editText1.setTextSize(TypedValue.COMPLEX_UNIT_PX, seekBar.getProgress());
-                fontSize = i;
-                if(drawLines){
-                    drawLines(fontHeight,i);
-                }
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                prefs = getPreferences(MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putFloat("fontsize", editText1.getTextSize());
-                editor.commit();
-
-            }
-        });
-
-        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar2, int progress, boolean b) {
-                float floatProgress = (float) progress / 500;
-                editText1.setLetterSpacing(floatProgress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar2) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar2) {
-
-            }
-        });
-
-
-
-
-        MarginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawMargin) {
-                    drawMargin = false;
-                    MarginButton.setText("Include Margin");
-                    selected.setVisibility(View.INVISIBLE);/*---------------------------------------------------------------*/
-                    selected2.setVisibility(View.INVISIBLE);
-                    editText1.setPadding(40,50,0,0);
-                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
-                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
-                    marginBitmap = newBitmap;
-                } else {
-                    Bitmap newBitmap = Bitmap.createBitmap(marginView.getWidth(), marginView.getHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas3 = new Canvas(newBitmap);
-                    Paint paint3 = new Paint();
-                    paint3.setColor(getResources().getColor(R.color.ColourDarkRed));
-                    paint3.setStyle(Paint.Style.STROKE);
-                    paint3.setStrokeWidth(3);
-                    editText1.setPadding(60,100,0,0);
-                    canvas3.drawLine(0,78,marginView.getWidth(),78,paint3);
-                    canvas3.drawLine(48,0,48,marginView.getHeight(),paint3);
-                    marginView.setBackground(new BitmapDrawable(getResources(), newBitmap));
-                    marginBitmap = newBitmap;
-                    drawMargin = true;
-                    selected.setVisibility(View.VISIBLE);
-                    selected2.setVisibility(View.VISIBLE);
-                    drawLines(fontHeight,fontSize);
-                }
-            }
-        });
-
-        sideMarginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawSideMargin){
-                    drawSideMargin=false;
-                    selected21.setVisibility(View.INVISIBLE);/*------------side margin onclick Listener--------------------*/
-                    selected22.setVisibility(View.INVISIBLE);
-                } else {
-                    selected21.setVisibility(View.VISIBLE);
-                    selected22.setVisibility(View.VISIBLE);
-                    drawSideMargin=true;
-                }
-
-
-
-                }
-            });
-
-        DrawLinesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawlinesboolean){
-                    drawlinesboolean=false;
-                    selected31.setVisibility(View.INVISIBLE);/*-------drawLines Button On click listener-------*/
-                    selected33.setVisibility(View.INVISIBLE);
-                } else {
-                    selected31.setVisibility(View.VISIBLE);
-                    selected33.setVisibility(View.VISIBLE);
-                    drawlinesboolean=true;
-                }
-
-
-
-            }
-        });
-
-
 
     }
 
@@ -725,638 +682,702 @@ public class activity_next extends AppCompatActivity {
     private void imageButton2_OnClickListener() {
 
         fSel0.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.times_new_roman);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel0.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 8.2f;
+                lineManagement(115,87);
             }
         });
 
         fSel1.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_03);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel1.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -6f;
+                lineManagement(130,90);
             }
         });
 
         fSel2.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_04);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel2.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -4.9f;
-
+                lineManagement(130,90);
             }
         });
 
         fSel3.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_02);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel3.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -4f;
+                lineManagement(130,90);
             }
         });
 
         fSel4.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_01);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel4.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3.6f;
+                lineManagement(130,90);
+
             }
         });
 
         fSel5.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_05);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel5.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -12f;
+                lineManagement(130,90);
             }
         });
 
         fSel6.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriterfont6_yashwanth);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel6.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3.6f;
+                lineManagement(130,90);
             }
         });
 
         fSel7.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriterfont7_ananya);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel7.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3.9f;
+                lineManagement(130,90);
             }
         });
 
         fSel8.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriterfont_8_afreedi);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel8.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -4.5f;
-
+                lineManagement(130,90);
             }
         });
 
         fSel9.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_09);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel9.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3.6f;
+                lineManagement(130,90);
             }
         });
 
         fSel10.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_10);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel10.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel11.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_11);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel11.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel12.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.handwriting_12);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel12.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3f;
+                lineManagement(130,90);
             }
         });
 
         fSel13.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts13);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel13.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -4.2f;
+                lineManagement(130,90);
             }
         });
 
         fsel14.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts14);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fsel14.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -3.2f;
+                lineManagement(130,90);
             }
         });
 
         fsel15.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts15);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fsel15.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel16.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts16);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel16.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel17.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts17);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel17.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 3.6f;
+                lineManagement(130,90);
             }
         });
 
         fSel18.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts18);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel18.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel19.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts19);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel19.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel20.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts20);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel20.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel21.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts21);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel21.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel22.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts22);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel22.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel23.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts23);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel23.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel24.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts24);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel24.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel25.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts25);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel25.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.5f;
+                lineManagement(130,90);
             }
         });
 
         fSel26.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts26);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel26.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3f;
+                lineManagement(130,90);
             }
         });
 
         fSel27.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts27);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel27.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.2f;
+                lineManagement(130,90);
             }
         });
 
         fSel28.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts28);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel28.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.4f;
+                lineManagement(130,90);
             }
         });
 
         fSel29.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts29);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel29.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-3.4f;
+                lineManagement(130,90);
             }
         });
 
         fSel30.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts30);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel30.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=-4.8f;
+                lineManagement(130,90);
             }
         });
 
         fSel31.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts31);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel31.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=2.1f;
+                lineManagement(120,85);
             }
         });
 
         fSel32.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts32);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel32.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=8f;
+                lineManagement(120,86);
             }
         });
 
         fSel33.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts33);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel33.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=100f;
+                lineManagement(120,84);
             }
         });
 
         fSel34.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts34);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel34.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=22f;
+                lineManagement(125,83);
             }
         });
 
         fSel35.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts35);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel35.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=6f;
+                lineManagement(120,84);
             }
         });
 
         fSel36.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts36);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel36.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=1.06f;
+                lineManagement(127,84);
             }
         });
 
         fSel37.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts37);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel37.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=100f;
+                lineManagement(120,84);
             }
         });
 
         fSel38.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts57);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel38.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=15f;
+                lineManagement(125,90);
             }
         });
 
         fSel39.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts39);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel39.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=4.55f;
+                lineManagement(125,86);
             }
         });
 
         fSel40.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts40);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel40.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=4.3f;
+                lineManagement(120,84);
             }
         });
 
         fSel41.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts41);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel41.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight=10.05f;
+                lineManagement(120,84);
 
             }
         });
 
         fSel42.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts42);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel42.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 2.6f;
+                lineManagement(115,84);
             }
         });
 
         fSel43.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts43);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel43.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.75f;
+                lineManagement(100,86);
             }
         });
 
         fSel44.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts44);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel44.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.44f;
+                lineManagement(110,84);
             }
         });
 
         fSel45.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts45);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel45.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 4f;
+                lineManagement(110,84);
             }
         });
 
         fSel46.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts46);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel46.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 2.8f;
+                lineManagement(110,84);
             }
         });
 
         fSel47.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts47);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel47.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.8f;
+                lineManagement(110,85);
             }
         });
 
         fSel48.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts48);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel48.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.36f;
+                lineManagement(110,85);
             }
         });
 
         fSel49.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts49);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel49.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 100f;
+                lineManagement(120,84);
             }
         });
 
         fSel50.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts50);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel50.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = -100f;
+                lineManagement(130,90);
             }
         });
 
         fSel51.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts51);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel51.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 0.94f;
+                lineManagement(110,85);
             }
         });
 
         fSel52.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts52);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel52.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.18f;
+                lineManagement(110,84);
             }
         });
 
         fSel53.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts53);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel53.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 0.94f;
+                lineManagement(110,84);
             }
         });
 
         fSel54.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts54);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel54.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.05f;
+                lineManagement(110,84);
             }
         });
 
         fSel55.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts55);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel55.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.95f;
+                lineManagement(100,84);
             }
         });
 
         fSel56.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Typeface type0 = ResourcesCompat.getFont(activity_next.this, R.font.hwfonts56);
                 editText1.setTypeface(type0);
                 defaultFontBackground();
                 fSel56.setBackgroundResource(R.drawable.activity_next_bg);
-                fontHeight = 1.82f;
+                lineManagement(120,84);
             }
         });
 
 
+
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    private void lineManagement(int topPadding1, int fontheight) {
+        editText1.setPadding(sidePadding,topPadding1,0,0);
+        topPadding = topPadding1;
+        fontHeight = fontheight;
+        editText1.setLineHeight(fontheight);
+    }
 
 
     private void imageButton3_OnClickListener() {
@@ -1628,9 +1649,11 @@ public class activity_next extends AppCompatActivity {
 
     private void drawLines(float fontHeight, int fontSize){
         drawLines = true;
-        int dist = (int)(fontSize+(fontSize/fontHeight));
+        //int dist = (int)(fontSize+(fontSize/fontHeight));
+
         final int Eheight = lineView.getHeight();
         final int Ewidth = lineView.getWidth();
+        int dist = 84;
         Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
         Canvas canvas2 = new Canvas(newBitmap);
         Paint paint2 = new Paint();
@@ -1638,11 +1661,7 @@ public class activity_next extends AppCompatActivity {
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(3);
 
-        if (drawMargin) {
-            dist2 = 90 + dist;
-        } else {
-            dist2 = 50 + dist;
-        }
+        dist2 = 100 + dist;
         for (int k = 0; k < Eheight / dist; k++) {
 
             canvas2.drawLine(0, dist2, Ewidth, dist2, paint2);
@@ -1661,6 +1680,81 @@ public class activity_next extends AppCompatActivity {
         Canvas canvas2 = new Canvas(newBitmap);
         lineView.setBackground(new BitmapDrawable(getResources(), newBitmap));
         lineBitmap = newBitmap;
+    }
+
+    private void captureImage(){
+        if (!capturedImage) {
+            CaptureButton.startAnimation(captureanim);
+            setInvisible();
+            setFalse();
+            editText1.setCursorVisible(false);
+            editText1.clearFocus();
+            editText1.buildDrawingCache();
+            Bitmap newBItmap1 = Bitmap.createBitmap(editText1.getDrawingCache());
+            final int Eheight = lineView.getHeight();
+            final int Ewidth = lineView.getWidth();
+            Bitmap newBitmap = Bitmap.createBitmap(Ewidth, Eheight, Bitmap.Config.ARGB_8888);
+            Canvas canvas2 = new Canvas(newBitmap);
+            canvas2.drawBitmap(newBItmap1,0,0,null);
+            if(drawLines){
+                canvas2.drawBitmap(lineBitmap,0,0,null);
+            }
+            if(drawMargin){
+                canvas2.drawBitmap(marginBitmap,0,0,null);
+            }
+            if (drawSideMargin){
+                canvas2.drawBitmap(sideMarginBitmap,0,0,null);
+            }
+
+            saveBitmap = newBitmap;
+            pickImage.setVisibility(View.VISIBLE);
+            pickImage.setImageBitmap(saveBitmap);
+            capturedAccept.setVisibility(View.VISIBLE);
+            capturedDecline.setVisibility(View.VISIBLE);
+            toolbarcaptured.setVisibility(View.VISIBLE);
+            editText1.destroyDrawingCache();
+            capturedImage = true;
+        }
+    }
+
+    private void captureAccept(){
+        capturedImages.add(saveBitmap);
+        capturedAccept.setVisibility(View.INVISIBLE);
+        capturedDecline.setVisibility(View.INVISIBLE);
+        pickImage.setVisibility(View.INVISIBLE);
+        textView.setVisibility(View.VISIBLE);
+        editText1.setCursorVisible(true);
+        capturedImage = false;
+        numOfImages++;
+        textView.setText("Pages : " + numOfImages);
+        toolbarcaptured.setVisibility(View.INVISIBLE);
+        if (retake == true) {
+            retake = false;
+            exportButton.setVisibility(View.VISIBLE);
+            try {
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "Handwriter_" + timeStamp;
+                File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                File file = File.createTempFile(imageFileName, ".jpg", storageDir);
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                saveBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                uris.set(retakeno - 1, file.getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Intent finalIntent = new Intent(activity_next.this, FinalActivity.class);
+            finalIntent.putExtra("capturedImages", uris);
+            startActivityForResult(finalIntent, 100);
+        }
+    }
+
+    private void captureDecline(){
+        capturedAccept.setVisibility(View.INVISIBLE);
+        capturedDecline.setVisibility(View.INVISIBLE);
+        pickImage.setVisibility(View.INVISIBLE);
+        editText1.setCursorVisible(true);
+        capturedImage = false;
+        toolbarcaptured.setVisibility(View.INVISIBLE);
     }
 
 }

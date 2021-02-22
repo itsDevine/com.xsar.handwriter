@@ -124,6 +124,15 @@
         app:layout_constraintRight_toRightOf="@id/edit_text_InNext"
         app:layout_constraintTop_toTopOf="@id/edit_text_InNext" />
 
+    <View
+        android:id="@+id/sideMarginView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_InNext"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_InNext"
+        app:layout_constraintRight_toRightOf="@id/edit_text_InNext"
+        app:layout_constraintTop_toTopOf="@id/edit_text_InNext" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewWalkthrough"
         android:layout_width="match_parent"

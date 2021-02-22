@@ -13,6 +13,7 @@
         android:id="@+id/text_file_but"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+
         android:background="@drawable/grey_ripple"
         android:onClick="ActionMode"
         android:orientation="horizontal"
@@ -22,25 +23,12 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:src="@drawable/latest_file_blue"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/txtfileicon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TXT"
-            android:textSize="16dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/raleway_semibold"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@id/imageView2"
-            app:layout_constraintStart_toStartOf="@id/imageView2"
-            app:layout_constraintEnd_toEndOf="@id/imageView2"/>
 
         <LinearLayout
             android:id="@+id/linearLayout"
