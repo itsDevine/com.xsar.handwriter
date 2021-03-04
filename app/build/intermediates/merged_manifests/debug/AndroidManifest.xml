@@ -49,7 +49,9 @@
         <activity
             android:name="com.xsar.handwriter.PDF_Viewer"
             android:screenOrientation="portrait" />
-        <activity android:name="com.xsar.handwriter.NewCustomCamera" />
+        <activity
+            android:name="com.xsar.handwriter.NewCustomCamera"
+            android:screenOrientation="portrait" />
         <activity android:name="com.xsar.handwriter.ActivityPurchased" />
         <activity android:name="com.xsar.handwriter.ActivityAddYourFont" />
         <activity

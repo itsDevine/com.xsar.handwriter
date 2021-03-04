@@ -177,9 +177,12 @@ public class MainActivity extends AppCompatActivity {
                             150);
                 } else {
                     onAddButtonClicked();
-                    Intent cameraIntent = new Intent(MainActivity.this, image_editor.class);
+                    /*Intent cameraIntent = new Intent(MainActivity.this, NewCustomCamera.class);
                     cameraIntent.putExtra("fromGallery", false);
-                    startActivity(cameraIntent);
+                    startActivity(cameraIntent);*/
+                    Intent camIntent = new Intent(MainActivity.this, NewCustomCamera.class);
+                    camIntent.putExtra("fromActivity", 1);
+                    startActivity(camIntent);
                 }
 
             }

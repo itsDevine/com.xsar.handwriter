@@ -32,7 +32,8 @@
         <activity android:name=".PDF_Viewer"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".NewCustomCamera" />
+        <activity android:name=".NewCustomCamera"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ActivityPurchased" />
         <activity android:name=".ActivityAddYourFont" />
         <activity
