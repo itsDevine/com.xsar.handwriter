@@ -32,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
@@ -78,25 +79,7 @@ public class image_editor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_editor);
-        upperToolbar = (Toolbar) findViewById(R.id.upperToolbar);
-        lowerToolbar = (Toolbar) findViewById(R.id.lowerToolbar);
-        retakeButton = (Button) findViewById(R.id.retakeButton);
-        nextButton = (Button) findViewById(R.id.nextButton);
-        cropButton = (Button) findViewById(R.id.cropButton);
-        addButton = (Button) findViewById(R.id.addButton);
-        editorGallery = (Button) findViewById(R.id.editorGallery);
-        editorDelete = (Button) findViewById(R.id.editorDelete);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imagesSelected = (TextView) findViewById(R.id.imagesSelected);
-        loading =(ImageView) findViewById(R.id.loadingImageView);
-        anim = (AnimationDrawable)loading.getDrawable();
-        loadingBg = findViewById(R.id.loadingBG);
-        loadingText = findViewById(R.id.loadingTextView);
 
-        imagesArray = new ArrayList<Bitmap>();
-        recognizedText = new ArrayList<String>();
-        photopaths = new ArrayList<String>();
-        uris = new ArrayList<Uri>();
         setUi();
 
         setSupportActionBar(upperToolbar);
@@ -107,7 +90,7 @@ public class image_editor extends AppCompatActivity {
         fromGallery = getIntent().getExtras().getBoolean("fromGallery");
 
         if (fromGallery == false && freshEntry==true){
-            if (ContextCompat.checkSelfPermission(image_editor.this,
+            /*if (ContextCompat.checkSelfPermission(image_editor.this,
                     Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(image_editor.this,
                         new String[]{
@@ -117,7 +100,10 @@ public class image_editor extends AppCompatActivity {
             }else{
                 dispatchTakePictureIntent();
                 freshEntry = false;
-            }
+            }*/
+            newUris = getIntent().getStringArrayListExtra("imagesCaptured");
+            cameraImages();
+            freshEntry = false;
         }
 
         if (fromGallery == true){
@@ -131,8 +117,7 @@ public class image_editor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (picsTaken > 0) {
-
-                    if (ContextCompat.checkSelfPermission(image_editor.this,
+                    /*if (ContextCompat.checkSelfPermission(image_editor.this,
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         ActivityCompat.requestPermissions(image_editor.this,
                                 new String[]{
@@ -142,7 +127,10 @@ public class image_editor extends AppCompatActivity {
                     }else{
                         dispatchTakePictureIntent();
                         newImage = false;
-                    }
+                    }*/
+                    Intent addIntent = new Intent(image_editor.this, NewCustomCamera.class);
+                    addIntent.putExtra("fromActivity", 3);
+                    startActivityForResult(addIntent,250);
                 } else {
                     Toast.makeText(image_editor.this,"Press add or gallery button to take images", Toast.LENGTH_SHORT ).show();
                 }
@@ -165,7 +153,7 @@ public class image_editor extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(picsTaken < 50){
+                /*if(picsTaken < 50){
                     if (ContextCompat.checkSelfPermission(image_editor.this,
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         ActivityCompat.requestPermissions(image_editor.this,
@@ -180,6 +168,15 @@ public class image_editor extends AppCompatActivity {
 
                 } else{
 
+                }*/
+                if(picsTaken < 50){
+                    Intent addIntent = new Intent(image_editor.this, NewCustomCamera.class);
+                    addIntent.putExtra("picstaken",picsTaken);
+                    addIntent.putExtra("fromActivity", 2);
+                    startActivityForResult(addIntent,150);
+                    newImage = true;
+                } else{
+                    Toast.makeText(image_editor.this,"Images limit reached",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -314,12 +311,33 @@ public class image_editor extends AppCompatActivity {
     }
 
     private void setUi(){
+
+        upperToolbar = (Toolbar) findViewById(R.id.upperToolbar);
+        lowerToolbar = (Toolbar) findViewById(R.id.lowerToolbar);
+        retakeButton = (Button) findViewById(R.id.retakeButton);
+        nextButton = (Button) findViewById(R.id.nextButton);
+        cropButton = (Button) findViewById(R.id.cropButton);
+        addButton = (Button) findViewById(R.id.addButton);
+        editorGallery = (Button) findViewById(R.id.editorGallery);
+        editorDelete = (Button) findViewById(R.id.editorDelete);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imagesSelected = (TextView) findViewById(R.id.imagesSelected);
+        loading =(ImageView) findViewById(R.id.loadingImageView);
+        anim = (AnimationDrawable)loading.getDrawable();
+        loadingBg = findViewById(R.id.loadingBG);
+        loadingText = findViewById(R.id.loadingTextView);
+
+        imagesArray = new ArrayList<Bitmap>();
+        recognizedText = new ArrayList<String>();
+        photopaths = new ArrayList<String>();
+        uris = new ArrayList<Uri>();
+
         Display display = getWindowManager().getDefaultDisplay();
         int screenWidth = display.getWidth();
         int screenHeiht = display.getHeight();
 
         ViewGroup.MarginLayoutParams loadingLayoutParams = (ViewGroup.MarginLayoutParams)loading.getLayoutParams();
-        loadingLayoutParams.height = (screenWidth*20)/100;
+        loadingLayoutParams.height = (screenWidth*40)/100;
         loadingLayoutParams.width = (screenWidth*40)/100;
         loading.setLayoutParams(loadingLayoutParams);
 
@@ -513,7 +531,7 @@ public class image_editor extends AppCompatActivity {
             }
         }
 
-        /*if (requestCode == 150){
+        if (requestCode == 150){
             if(resultCode == RESULT_OK){
                 fromGallery = data.getExtras().getBoolean("fromGallery");
                 if(fromGallery == true) {
@@ -533,14 +551,14 @@ public class image_editor extends AppCompatActivity {
                 imagesArray.set(picDisplay-1,imagebitmap);
                 imageView.setImageBitmap(imagebitmap);
             }
-        }*/
+        }
     }
 
     private void prevImageDisplay(){
         if(picDisplay > 1){
             imagesArray.set(picDisplay-1,imagebitmap);
             picDisplay--;
-            imageView.setImageBitmap(imagesArray.get(picDisplay-1));
+            //imageView.setImageBitmap(imagesArray.get(picDisplay-1));
             imagebitmap = imagesArray.get(picDisplay-1);
             imagesSelected.setText(String.valueOf(picDisplay) + "/50");
         }
@@ -550,7 +568,7 @@ public class image_editor extends AppCompatActivity {
         if(picDisplay < picsTaken){
             imagesArray.set(picDisplay-1,imagebitmap);
             picDisplay++;
-            imageView.setImageBitmap(imagesArray.get(picDisplay-1));
+           // imageView.setImageBitmap(imagesArray.get(picDisplay-1));
             imagebitmap = imagesArray.get(picDisplay-1);
             imagesSelected.setText(String.valueOf(picDisplay) + "/50");
         }
@@ -614,7 +632,7 @@ public class image_editor extends AppCompatActivity {
 
     }
 
-   /* private void cameraImages(){
+    private void cameraImages(){
         for (int i = 0; i < newUris.size(); i++) {
             uris.add(Uri.fromFile(new File(newUris.get(i))));
             imagebitmap =BitmapFactory.decodeFile(newUris.get(i));
@@ -651,7 +669,8 @@ public class image_editor extends AppCompatActivity {
         }
         imageView.setImageBitmap(imagebitmap);
         imagesSelected.setText(String.valueOf(picDisplay)+"/50");
-    }*/
+        slidingImages adapter = new slidingImages(this,imagesArray,picDisplay-1);
+    }
 
     public class OnSwipeTouchListener implements View.OnTouchListener {
 

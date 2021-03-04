@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\fb5100866bd4f6dd879f07386571b663\jetified-android-image-cropper-2.8.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\8c20b69ef683a8fee34a9e40efbef82c\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\7050932ce6fef59f2d76439e0de36657\navigation-ui-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -90,20 +90,20 @@ MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\ROSHAN\.gradle\cac
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\6ea31ac4274e817640c76cc21ebcec8f\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\5f4993781196a161ee02915c8e5f0e62\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-ads-base:19.5.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\07aa18e85973cad71ae6e4dab1371ed8\jetified-play-services-ads-base-19.5.0\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
-INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
+INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
 	package
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-106:12
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:1-107:12
 		INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:2:11-69
@@ -150,7 +150,7 @@ ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:14:9-47
 application
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:18:5-104:19
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:18:5-105:19
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\a6d3c620e759f0f44a95ebccf5f0b5f7\jetified-dexter-6.0.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\ROSHAN\.gradle\caches\transforms-2\files-2.1\877fd85a1d84f1c5e08e775df2238228\material-1.3.0-alpha03\AndroidManifest.xml:22:5-20
@@ -250,135 +250,137 @@ ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:32:19-45
 activity#com.xsar.handwriter.NewCustomCamera
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:35:9-53
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:35:9-36:51
+	android:screenOrientation
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:36:13-49
 	android:name
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:35:19-50
 activity#com.xsar.handwriter.ActivityPurchased
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:36:9-55
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:37:9-55
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:36:19-52
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:37:19-52
 activity#com.xsar.handwriter.ActivityAddYourFont
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:37:9-57
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:38:9-57
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:37:19-54
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:38:19-54
 activity#com.xsar.handwriter.Activity_Folder_Scanned
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:38:9-40:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:39:9-41:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:40:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:41:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:39:13-52
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:40:13-52
 activity#com.xsar.handwriter.Activity_Folder_PDF
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:41:9-43:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:42:9-44:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:43:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:44:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:42:13-48
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:43:13-48
 activity#com.xsar.handwriter.Activity_Folder_Text
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:44:9-46:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:45:9-47:52
 	android:screenOrientation
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:47:13-49
+	android:name
 		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:46:13-49
-	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:45:13-49
 activity#com.xsar.handwriter.FinalActivity
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:47:9-49:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:48:9-50:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:49:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:50:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:48:13-42
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:49:13-42
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:51:9-53:70
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:52:9-54:70
 	android:value
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:53:13-67
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:54:13-67
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:52:13-69
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:53:13-69
 activity#com.xsar.handwriter.text_recognizer
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:55:9-57:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:56:9-58:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:57:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:58:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:56:13-44
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:57:13-44
 activity#com.xsar.handwriter.image_editor
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:58:9-60:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:59:9-61:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:60:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:61:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:59:13-41
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:60:13-41
 activity#com.xsar.handwriter.activity_next
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:61:9-63:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:62:9-64:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:63:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:64:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:62:13-42
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:63:13-42
 activity#com.xsar.handwriter.activity_fab4
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:64:9-66:52
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:65:9-67:52
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:66:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:67:13-49
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:65:13-42
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:66:13-42
 activity#com.xsar.handwriter.MainActivity
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:67:9-71:59
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:68:9-72:59
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:70:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:71:13-49
 	android:label
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:69:13-56
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:70:13-56
 	android:theme
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:71:13-56
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:72:13-56
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:68:13-41
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:69:13-41
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:72:9-75:54
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:73:9-76:54
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:74:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:75:13-49
 	android:theme
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:75:13-51
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:76:13-51
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:73:13-76
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:74:13-76
 activity#com.xsar.handwriter.SplashActivity
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:76:9-85:20
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:77:9-86:20
 	android:screenOrientation
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:78:13-49
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:79:13-49
 	android:theme
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:79:13-47
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:80:13-47
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:77:13-43
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:78:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:80:13-84:29
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:81:13-85:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:81:17-69
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:82:17-69
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:81:25-66
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:82:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:83:17-77
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:84:17-77
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:83:27-74
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:84:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:87:9-89:57
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:88:9-90:57
 	android:resource
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:89:13-54
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:90:13-54
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:88:13-43
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:89:13-43
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:91:9-99:20
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:92:9-100:20
 	android:grantUriPermissions
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:95:13-47
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:96:13-47
 	android:authorities
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:93:13-67
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:94:13-67
 	android:exported
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:94:13-37
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:95:13-37
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:92:13-62
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:93:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:96:13-98:54
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:97:13-99:54
 	android:resource
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:98:17-51
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:99:17-51
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:97:17-67
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:98:17-67
 meta-data#com.google.android.gms.vision.DEPENDENCIES
-ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:101:9-103:35
+ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:102:9-104:35
 	android:value
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:103:13-32
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:104:13-32
 	android:name
-		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:102:13-70
+		ADDED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml:103:13-70
 uses-sdk
 INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ROSHAN\StudioProjects\com.xsar.handwriter\app\src\main\AndroidManifest.xml

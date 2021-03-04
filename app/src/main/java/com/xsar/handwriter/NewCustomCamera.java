@@ -1,6 +1,7 @@
 package com.xsar.handwriter;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -13,6 +14,7 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -23,10 +25,13 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -44,6 +49,8 @@ public class NewCustomCamera extends AppCompatActivity {
     Button captureButton,galleryButton,imagesCaptured,imagesNo,flashButton,okButton;
     ImageButton imagesCaptured2;
     FrameLayout customFramelayout;
+    LinearLayout customRL;
+    androidx.appcompat.widget.Toolbar customCamToolbar1, customCamToolbar2;
     ShowCamera showCamera;
     public File file;
     Camera.Parameters params;
@@ -52,7 +59,10 @@ public class NewCustomCamera extends AppCompatActivity {
     ArrayList<String> fileUris;
     Animation flash1anim, flash2anim, captureanim;
     ImageView flashImage1,flashImage2,flashImage3;
+    float prevRatio = 0, heightRatio;
+    float finalHeight, finalWidth;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +76,9 @@ public class NewCustomCamera extends AppCompatActivity {
         imagesCaptured2 = (ImageButton) findViewById(R.id.customimages22);
         flashButton = (Button) findViewById(R.id.customflash2);
         okButton = (Button) findViewById(R.id.customnext2);
+        customCamToolbar1 = (Toolbar)findViewById(R.id.customCam2Toolbar);
+        customCamToolbar2 = (Toolbar) findViewById(R.id.customCam2Toolbar2);
+       // customRL = (LinearLayout) findViewById(R.id.customRL);
 
         flash1anim = AnimationUtils.loadAnimation(this,R.anim.flashanimation);
         flash2anim = AnimationUtils.loadAnimation(this,R.anim.flashanimation2);
@@ -86,10 +99,46 @@ public class NewCustomCamera extends AppCompatActivity {
         }
 
 
+        Display display = getWindowManager().getDefaultDisplay();
+        float screenWidth = display.getWidth();
+        float screenHeight = display.getHeight();
+        float height = screenHeight-customCamToolbar1.getHeight()-customCamToolbar2.getHeight();
+        float width = screenWidth;
+        float ratio = height/width;
+
         camera = Camera.open();
         params = camera.getParameters();
+
+        List <Camera.Size> supportedSizes = params.getSupportedPreviewSizes();
+
+
+        for(Camera.Size size : supportedSizes){
+            float ratio1 = 0f;
+            if(this.getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE){
+                ratio1 = size.width/size.height;
+            } else {
+                ratio1 = size.height/size.width;
+            }
+
+            if(ratio1 < ratio && ratio1 > prevRatio && size.width > (0.7*screenWidth)) {
+                finalWidth = size.width;
+                finalHeight = size.height;
+                //heightRatio = ratio1;
+                prevRatio = ratio1;
+
+            }
+        }
+        //params.setPreviewSize(supportedSizes.get(0).width,supportedSizes.get(0).height);
+        params.setPreviewSize((int)finalWidth,(int)finalHeight);
         params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
         camera.setParameters(params);
+
+
+        FrameLayout.MarginLayoutParams flparams = (FrameLayout.MarginLayoutParams) customFramelayout.getLayoutParams();
+        flparams.width = (int)screenWidth;
+        flparams.height = (int)((finalWidth/finalHeight)*screenWidth);
+        customFramelayout.setLayoutParams(flparams);
+
 
         showCamera = new ShowCamera(this,camera,customFramelayout);
         customFramelayout.addView(showCamera);
@@ -190,10 +239,11 @@ public class NewCustomCamera extends AppCompatActivity {
         });
 
         customFramelayout.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    //focusOnTouch(motionEvent);
+                    focusOnTouch(motionEvent);
                 }
                 return true;
             }
@@ -219,7 +269,7 @@ public class NewCustomCamera extends AppCompatActivity {
                 focusParams.setFocusAreas(meteringAresa);
 
                 camera.setParameters(focusParams);
-               // camera.autoFocus(mAutoFocusTakePictureCallback);
+                camera.autoFocus(mAutoFocusTakePictureCallback);
             } else {
                 camera.autoFocus(mAutoFocusTakePictureCallback);
             }

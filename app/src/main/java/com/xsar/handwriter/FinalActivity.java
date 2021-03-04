@@ -97,74 +97,9 @@ public class FinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
 
-        images = (GridView) findViewById(R.id.imagesGrid);
-        flToolbar1 = (Toolbar) findViewById(R.id.finaltoolbar1);
-        finalImageView = (ImageView) findViewById(R.id.finalImageView);
-        finalAddButton = (Button) findViewById(R.id.finaladd);
-        finalDeleteButton = (Button) findViewById(R.id.finaldelete);
-        finalRetakeButton = (Button) findViewById(R.id.finalretake);
-        finalExportButton = (LinearLayout) findViewById(R.id.finalExport);
-        flToolbar = (Toolbar) findViewById(R.id.fltoolbar);
-        finalAdd1 = (ImageButton) findViewById(R.id.finaladd1);
-        exportImages = (Button) findViewById(R.id.exportImages);
-        exportPdf = (Button) findViewById(R.id.exportPdf);
-        exportLayout = (LinearLayout) findViewById(R.id.exportLayout);
-        finalRenameLayout = (LinearLayout) findViewById(R.id.finalrenamelayout);
-        finalFilename = (EditText) findViewById(R.id.finalfilename);
-        finalRenameOk = (Button) findViewById(R.id.finalrenameok);
-        finalRenameCancel = (Button) findViewById(R.id.finalrenamecancel);
-        renameBg = findViewById(R.id.renameBackground2);
-        exportBg = findViewById(R.id.exportBackground22);
-        finalDiagramView = (ImageView) findViewById(R.id.finalDiagramView);
-        diagramClose = (Button) findViewById(R.id.cancelDiagram);
-        diagramResize = (Button) findViewById(R.id.finalDragButton);
-        finalDiagram = (Button) findViewById(R.id.finaldiagram);
-        diagramOk = (Button) findViewById(R.id.okDiagram);
-        originalDiagram = (Button) findViewById(R.id.originalDiagram);
-        inkDiagram = (Button) findViewById(R.id.inkDiagram);
-        loading =(ImageView) findViewById(R.id.loadingImageView2);
-        anim = (AnimationDrawable)loading.getDrawable();
-        loadingBg = findViewById(R.id.loadingBG2);
-        loadingText = findViewById(R.id.loadingTextView2);
-
-        fromBottom = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.from_bottom_original_size);
-        toBottom = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.to_bottom_original_size);
-        fadeIn2 = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadein_slow);
-        fadeOut2 = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadeout_slow);
-        fadeIn = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadein);
-        fadeOut = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadeout);
-
-        inkColorScroll = (HorizontalScrollView) findViewById(R.id.inkColorScroll);
-        inkBlack = (Button) findViewById(R.id.ink_Colour_Black);
-        inkGrey = (Button) findViewById(R.id.ink_Colour_Grey);
-        inkBlue = (Button) findViewById(R.id.ink_Color_Blue);
-        inkDarkBlue = (Button) findViewById(R.id.ink_Colour_DarkBlue);
-        inkRed = (Button) findViewById(R.id.ink_Colour_Red);
-        inkDarkRed = (Button) findViewById(R.id.ink_Colour_DarkRed);
-
-        eraseLayout = (LinearLayout) findViewById(R.id.eraseLayout);
-        brushHardness = (SeekBar) findViewById(R.id.brushHardness);
-        paintDiagram = (LinearLayout) findViewById(R.id.paintDiagram);
-        eraseDiagram = (LinearLayout) findViewById(R.id.eraseDiagram);
-        brushSize = (SeekBar) findViewById(R.id.brushSize);
-        eraseLayoutClose = (ImageButton) findViewById(R.id.eraseLayoutClose);
-        eraseButton = (Button) findViewById(R.id.eraseButton);
-        paintButton = (Button) findViewById(R.id.paintButton);
-
-        Toolbar toolbar = findViewById(R.id.finaltoolbar1);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("");
-
+        findViewbyId();
         homeUI();
-
-        MobileAds.initialize(this,
-                "ca-app-pub-9818307260762254~1966791439");
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-9818307260762254/9978316856");
-        //mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        adshow();
 
         finalImageView.setOnTouchListener(new FinalActivity.OnSwipeTouchListener(this));
         finalImageView.setVisibility(View.INVISIBLE);
@@ -179,87 +114,35 @@ public class FinalActivity extends AppCompatActivity {
         finalDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                totalImages--;
-                capturedImages.remove(selected - 1);
-                uris.remove(selected - 1);
-                Toast.makeText(FinalActivity.this, "1 image deleted", Toast.LENGTH_SHORT).show();
-                if (totalImages > 0) {
-                    if (selected <= totalImages) {
-                        finalImageView.setImageBitmap(capturedImages.get(selected - 1));
-                    } else {
-                        selected--;
-                        finalImageView.setImageBitmap(capturedImages.get(selected - 1));
-                    }
-                } else {
-                    Intent cameraintent2 = new Intent();
-                    cameraintent2.putExtra("actionPerformed", 1);
-                    cameraintent2.putExtra("uris", uris);
-                    setResult(RESULT_OK, cameraintent2);
-                    finish();
-                }
+                delete();
             }
         });
 
         finalRetakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent cameraintent2 = new Intent();
-                cameraintent2.putExtra("actionPerformed", 2);
-                cameraintent2.putExtra("uris", uris);
-                cameraintent2.putExtra("retake", selected);
-                setResult(RESULT_OK, cameraintent2);
-                finish();
+                retake();
             }
         });
 
         finalExportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!exportPressed) {
-                    exportBg.startAnimation(fadeIn2);
-                    exportBg.setVisibility(View.VISIBLE);
-                    slideUp(exportLayout);
-                    exportPressed = true;
-                } else {
-                    exportBg.startAnimation(fadeOut2);
-                    exportBg.setVisibility(View.INVISIBLE);
-                    slideDown(exportLayout);
-                    exportPressed = false;
-                }
+                export();
             }
         });
 
         exportPdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveas = 1;
-                exportBg.startAnimation(fadeOut2);
-                exportBg.setVisibility(View.INVISIBLE);
-                exportLayout.startAnimation(fadeOut);
-                exportLayout.setVisibility(View.INVISIBLE);
-                finalRenameLayout.startAnimation(fadeIn);
-                finalRenameLayout.setVisibility(View.VISIBLE);
-                renameBg.startAnimation(fadeIn2);
-                renameBg.setVisibility(View.VISIBLE);
-                renameLayout=true;
-                exportPressed = false;
+                exportAsPdf();
             }
         });
 
         exportImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveas = 2;
-                exportBg.startAnimation(fadeOut2);
-                exportBg.setVisibility(View.INVISIBLE);
-                exportLayout.startAnimation(fadeOut);
-                exportLayout.setVisibility(View.INVISIBLE);
-                finalRenameLayout.startAnimation(fadeIn);
-                finalRenameLayout.setVisibility(View.VISIBLE);
-                renameBg.startAnimation(fadeIn2);
-                renameBg.setVisibility(View.VISIBLE);
-                renameLayout=true;
-                exportPressed = false;
+                exportAsImages();
             }
         });
 
@@ -273,12 +156,7 @@ public class FinalActivity extends AppCompatActivity {
         finalRenameCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveas = 0;
-                finalRenameLayout.startAnimation(fadeOut);
-                finalRenameLayout.setVisibility(View.INVISIBLE);
-                renameBg.startAnimation(fadeOut2);
-                renameBg.setVisibility(View.INVISIBLE);
-                exportPressed = false;
+                renameCancel();
             }
         });
 
@@ -287,15 +165,7 @@ public class FinalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 exportAsWhatever();
-                finalRenameLayout.startAnimation(fadeOut);
-                finalRenameLayout.setVisibility(View.INVISIBLE);
-                renameBg.startAnimation(fadeOut2);
-                renameBg.setVisibility(View.INVISIBLE);
-                exportPressed = false;
-
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                }
+                renameOk();
             }
         });
 
@@ -303,23 +173,14 @@ public class FinalActivity extends AppCompatActivity {
         renameBg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finalRenameLayout.startAnimation(fadeOut);
-                renameBg.startAnimation(fadeOut2);
-                finalRenameLayout.setVisibility(View.INVISIBLE);
-                renameBg.setVisibility(View.INVISIBLE);
-
-                exportPressed = false;
+                renameBg();
             }
         });
 
         exportBg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                exportBg.startAnimation(fadeOut2);
-                exportBg.setVisibility(View.INVISIBLE);
-                exportLayout.startAnimation(toBottom);
-                exportLayout.setVisibility(View.INVISIBLE);
-                exportPressed = false;
+                exportBg();
             }
         });
 
@@ -508,22 +369,7 @@ public class FinalActivity extends AppCompatActivity {
         diagramClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                diagramClose.setVisibility(View.INVISIBLE);
-                finalDiagramView.setVisibility(View.INVISIBLE);
-                diagramResize.setVisibility(View.INVISIBLE);
-                diagramOk.setVisibility(View.INVISIBLE);
-                originalDiagram.setVisibility(View.INVISIBLE);
-                inkDiagram.setVisibility(View.INVISIBLE);
-                finalDeleteButton.setVisibility(View.VISIBLE);
-                finalAddButton.setVisibility(View.VISIBLE);
-                finalRetakeButton.setVisibility(View.VISIBLE);
-                finalDiagram.setVisibility(View.VISIBLE);
-                paintDiagram.setVisibility(View.INVISIBLE);
-                eraseDiagram.setVisibility(View.INVISIBLE);
-                eraseLayout.setVisibility(View.INVISIBLE);
-                flToolbar.setVisibility(View.VISIBLE);
-                eraseLayoutClose.setVisibility(View.INVISIBLE);
-                diagramAction = 0;
+                diagramClose();
             }
         });
 
@@ -560,10 +406,7 @@ public class FinalActivity extends AppCompatActivity {
         originalDiagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),coloredBitmap));
-                originalBitmap = Bitmap.createScaledBitmap(coloredBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(coloredBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                inkColorScroll.setVisibility(View.INVISIBLE);
+                originalDiagram();
             }
         });
 
@@ -577,138 +420,42 @@ public class FinalActivity extends AppCompatActivity {
         inkBlack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 0, 0, 0));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(0,0,0);
             }
         });
 
         inkGrey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 80, 80, 80));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(80,80,80);
             }
         });
 
         inkBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 0, 68, 170));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(0,68,170);
             }
         });
 
         inkDarkBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 22, 38, 119));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(22,38,119);
             }
         });
 
         inkRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 255, 34, 34));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(255, 34, 34);
             }
         });
 
         inkDarkRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int x = 0; x < coloredBitmap.getWidth(); x++) {
-                    for (int y = 0; y < coloredBitmap.getHeight(); y++) {
-                        int pixel = coloredBitmap.getPixel(x, y);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-                        int green = Color.green(pixel);
-
-                        if (red > 100 && blue > 100 && green > 100) {
-                            inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
-                        } else {
-                            inkBitmap.setPixel(x, y, Color.argb(255, 153, 0, 0));
-                        }
-                    }
-                }
-                originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
-                finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+                inkDiagram(153, 0, 0);
             }
         });
 
@@ -891,6 +638,212 @@ public class FinalActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void originalDiagram() {
+        finalDiagramView.setBackground(new BitmapDrawable(getResources(),coloredBitmap));
+        originalBitmap = Bitmap.createScaledBitmap(coloredBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
+        changeabliBitmap = Bitmap.createScaledBitmap(coloredBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
+        inkColorScroll.setVisibility(View.INVISIBLE);
+    }
+
+    private void diagramClose() {
+        diagramClose.setVisibility(View.INVISIBLE);
+        finalDiagramView.setVisibility(View.INVISIBLE);
+        diagramResize.setVisibility(View.INVISIBLE);
+        diagramOk.setVisibility(View.INVISIBLE);
+        originalDiagram.setVisibility(View.INVISIBLE);
+        inkDiagram.setVisibility(View.INVISIBLE);
+        finalDeleteButton.setVisibility(View.VISIBLE);
+        finalAddButton.setVisibility(View.VISIBLE);
+        finalRetakeButton.setVisibility(View.VISIBLE);
+        finalDiagram.setVisibility(View.VISIBLE);
+        paintDiagram.setVisibility(View.INVISIBLE);
+        eraseDiagram.setVisibility(View.INVISIBLE);
+        eraseLayout.setVisibility(View.INVISIBLE);
+        flToolbar.setVisibility(View.VISIBLE);
+        eraseLayoutClose.setVisibility(View.INVISIBLE);
+        diagramAction = 0;
+    }
+
+    private void exportBg() {
+        exportBg.startAnimation(fadeOut2);
+        exportBg.setVisibility(View.INVISIBLE);
+        exportLayout.startAnimation(toBottom);
+        exportLayout.setVisibility(View.INVISIBLE);
+        exportPressed = false;
+    }
+
+    private void renameBg() {
+        finalRenameLayout.startAnimation(fadeOut);
+        renameBg.startAnimation(fadeOut2);
+        finalRenameLayout.setVisibility(View.INVISIBLE);
+        renameBg.setVisibility(View.INVISIBLE);
+        exportPressed = false;
+    }
+
+    private void renameOk() {
+        finalRenameLayout.startAnimation(fadeOut);
+        finalRenameLayout.setVisibility(View.INVISIBLE);
+        renameBg.startAnimation(fadeOut2);
+        renameBg.setVisibility(View.INVISIBLE);
+        exportPressed = false;
+
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+
+    private void renameCancel() {
+        saveas = 0;
+        finalRenameLayout.startAnimation(fadeOut);
+        finalRenameLayout.setVisibility(View.INVISIBLE);
+        renameBg.startAnimation(fadeOut2);
+        renameBg.setVisibility(View.INVISIBLE);
+        exportPressed = false;
+    }
+
+    private void exportAsImages() {
+        saveas = 2;
+        exportBg.startAnimation(fadeOut2);
+        exportBg.setVisibility(View.INVISIBLE);
+        exportLayout.startAnimation(fadeOut);
+        exportLayout.setVisibility(View.INVISIBLE);
+        finalRenameLayout.startAnimation(fadeIn);
+        finalRenameLayout.setVisibility(View.VISIBLE);
+        renameBg.startAnimation(fadeIn2);
+        renameBg.setVisibility(View.VISIBLE);
+        renameLayout=true;
+        exportPressed = false;
+    }
+
+    private void exportAsPdf() {
+        saveas = 1;
+        exportBg.startAnimation(fadeOut2);
+        exportBg.setVisibility(View.INVISIBLE);
+        exportLayout.startAnimation(fadeOut);
+        exportLayout.setVisibility(View.INVISIBLE);
+        finalRenameLayout.startAnimation(fadeIn);
+        finalRenameLayout.setVisibility(View.VISIBLE);
+        renameBg.startAnimation(fadeIn2);
+        renameBg.setVisibility(View.VISIBLE);
+        renameLayout=true;
+        exportPressed = false;
+    }
+
+    private void export() {
+        if (!exportPressed) {
+            exportBg.startAnimation(fadeIn2);
+            exportBg.setVisibility(View.VISIBLE);
+            slideUp(exportLayout);
+            exportPressed = true;
+        } else {
+            exportBg.startAnimation(fadeOut2);
+            exportBg.setVisibility(View.INVISIBLE);
+            slideDown(exportLayout);
+            exportPressed = false;
+        }
+    }
+
+    private void retake() {
+        Intent cameraintent2 = new Intent();
+        cameraintent2.putExtra("actionPerformed", 2);
+        cameraintent2.putExtra("uris", uris);
+        cameraintent2.putExtra("retake", selected);
+        setResult(RESULT_OK, cameraintent2);
+        finish();
+    }
+
+    private void delete() {
+        totalImages--;
+        capturedImages.remove(selected - 1);
+        uris.remove(selected - 1);
+        Toast.makeText(FinalActivity.this, "1 image deleted", Toast.LENGTH_SHORT).show();
+        if (totalImages > 0) {
+            if (selected <= totalImages) {
+                finalImageView.setImageBitmap(capturedImages.get(selected - 1));
+            } else {
+                selected--;
+                finalImageView.setImageBitmap(capturedImages.get(selected - 1));
+            }
+        } else {
+            Intent cameraintent2 = new Intent();
+            cameraintent2.putExtra("actionPerformed", 1);
+            cameraintent2.putExtra("uris", uris);
+            setResult(RESULT_OK, cameraintent2);
+            finish();
+        }
+    }
+
+    private void adshow() {
+        MobileAds.initialize(this,
+                "ca-app-pub-9818307260762254~1966791439");
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-9818307260762254/9978316856");
+        //mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
+    private void findViewbyId() {
+        images = (GridView) findViewById(R.id.imagesGrid);
+        flToolbar1 = (Toolbar) findViewById(R.id.finaltoolbar1);
+        finalImageView = (ImageView) findViewById(R.id.finalImageView);
+        finalAddButton = (Button) findViewById(R.id.finaladd);
+        finalDeleteButton = (Button) findViewById(R.id.finaldelete);
+        finalRetakeButton = (Button) findViewById(R.id.finalretake);
+        finalExportButton = (LinearLayout) findViewById(R.id.finalExport);
+        flToolbar = (Toolbar) findViewById(R.id.fltoolbar);
+        finalAdd1 = (ImageButton) findViewById(R.id.finaladd1);
+        exportImages = (Button) findViewById(R.id.exportImages);
+        exportPdf = (Button) findViewById(R.id.exportPdf);
+        exportLayout = (LinearLayout) findViewById(R.id.exportLayout);
+        finalRenameLayout = (LinearLayout) findViewById(R.id.finalrenamelayout);
+        finalFilename = (EditText) findViewById(R.id.finalfilename);
+        finalRenameOk = (Button) findViewById(R.id.finalrenameok);
+        finalRenameCancel = (Button) findViewById(R.id.finalrenamecancel);
+        renameBg = findViewById(R.id.renameBackground2);
+        exportBg = findViewById(R.id.exportBackground22);
+        finalDiagramView = (ImageView) findViewById(R.id.finalDiagramView);
+        diagramClose = (Button) findViewById(R.id.cancelDiagram);
+        diagramResize = (Button) findViewById(R.id.finalDragButton);
+        finalDiagram = (Button) findViewById(R.id.finaldiagram);
+        diagramOk = (Button) findViewById(R.id.okDiagram);
+        originalDiagram = (Button) findViewById(R.id.originalDiagram);
+        inkDiagram = (Button) findViewById(R.id.inkDiagram);
+        loading =(ImageView) findViewById(R.id.loadingImageView2);
+        anim = (AnimationDrawable)loading.getDrawable();
+        loadingBg = findViewById(R.id.loadingBG2);
+        loadingText = findViewById(R.id.loadingTextView2);
+
+        fromBottom = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.from_bottom_original_size);
+        toBottom = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.to_bottom_original_size);
+        fadeIn2 = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadein_slow);
+        fadeOut2 = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadeout_slow);
+        fadeIn = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadein);
+        fadeOut = AnimationUtils.loadAnimation(FinalActivity.this, R.anim.fadeout);
+
+        inkColorScroll = (HorizontalScrollView) findViewById(R.id.inkColorScroll);
+        inkBlack = (Button) findViewById(R.id.ink_Colour_Black);
+        inkGrey = (Button) findViewById(R.id.ink_Colour_Grey);
+        inkBlue = (Button) findViewById(R.id.ink_Color_Blue);
+        inkDarkBlue = (Button) findViewById(R.id.ink_Colour_DarkBlue);
+        inkRed = (Button) findViewById(R.id.ink_Colour_Red);
+        inkDarkRed = (Button) findViewById(R.id.ink_Colour_DarkRed);
+
+        eraseLayout = (LinearLayout) findViewById(R.id.eraseLayout);
+        brushHardness = (SeekBar) findViewById(R.id.brushHardness);
+        paintDiagram = (LinearLayout) findViewById(R.id.paintDiagram);
+        eraseDiagram = (LinearLayout) findViewById(R.id.eraseDiagram);
+        brushSize = (SeekBar) findViewById(R.id.brushSize);
+        eraseLayoutClose = (ImageButton) findViewById(R.id.eraseLayoutClose);
+        eraseButton = (Button) findViewById(R.id.eraseButton);
+        paintButton = (Button) findViewById(R.id.paintButton);
+
+        Toolbar toolbar = findViewById(R.id.finaltoolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("");
     }
 
     private void homeUI() {
@@ -1292,5 +1245,24 @@ public class FinalActivity extends AppCompatActivity {
         }
     }
 
+    private void inkDiagram(int r, int g, int b){
+        for (int x = 0; x < coloredBitmap.getWidth(); x++) {
+            for (int y = 0; y < coloredBitmap.getHeight(); y++) {
+                int pixel = coloredBitmap.getPixel(x, y);
+                int red = Color.red(pixel);
+                int blue = Color.blue(pixel);
+                int green = Color.green(pixel);
+
+                if (red > 100 && blue > 100 && green > 100) {
+                    inkBitmap.setPixel(x, y, Color.argb(0, 0, 0, 0));
+                } else {
+                    inkBitmap.setPixel(x, y, Color.argb(255, r, g, b));
+                }
+            }
+        }
+        originalBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
+        changeabliBitmap = Bitmap.createScaledBitmap(inkBitmap,coloredBitmap.getWidth(), coloredBitmap.getHeight(), false);
+        finalDiagramView.setBackground(new BitmapDrawable(getResources(),inkBitmap));
+    }
 
 }
